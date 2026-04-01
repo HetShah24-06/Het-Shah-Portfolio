@@ -2,42 +2,6 @@
    HET SHAH PORTFOLIO — main.js
    ============================================================ */
 
-/* ── 1. MATRIX RAIN ── */
-(function initMatrix() {
-  const canvas = document.getElementById('matrix-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<>{}[]=+-*/&|!@#$%^ヲァィゥェォ';
-  const FS = 13;
-  let cols, drops;
-
-  function resize() {
-    canvas.width  = window.innerWidth;
-    canvas.height = window.innerHeight;
-    cols  = Math.floor(canvas.width / FS);
-    drops = Array.from({ length: cols }, () => Math.random() * -(canvas.height / FS));
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  function draw() {
-    ctx.fillStyle = 'rgba(2,4,8,0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#f59e0b';
-    ctx.font = `${FS}px JetBrains Mono`;
-    for (let i = 0; i < drops.length; i++) {
-      const char = CHARS[Math.floor(Math.random() * CHARS.length)];
-      ctx.globalAlpha = 0.4 + Math.random() * 0.6;
-      ctx.fillText(char, i * FS, drops[i] * FS);
-      if (drops[i] * FS > canvas.height && Math.random() > 0.975) drops[i] = 0;
-      drops[i] += 0.45;
-    }
-    ctx.globalAlpha = 1;
-  }
-  setInterval(draw, 55);
-})();
-
-
 /* ── 2. CUSTOM CURSOR ── */
 (function initCursor() {
   const dot  = document.getElementById('cur');
@@ -105,15 +69,19 @@
     entries.forEach(e => {
       if (e.isIntersecting) {
         e.target.classList.add('vis');
-        // Stagger children if they have data-delay
         e.target.querySelectorAll('[data-delay]').forEach(child => {
           child.style.transitionDelay = child.dataset.delay + 'ms';
         });
       }
     });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.fade-up, .fade-left').forEach(el => io.observe(el));
+
+  // Fallback: if IntersectionObserver not supported, show all immediately
+  if (!window.IntersectionObserver) {
+    document.querySelectorAll('.fade-up, .fade-left').forEach(el => el.classList.add('vis'));
+  }
 })();
 
 
@@ -218,7 +186,7 @@ window.addEventListener('load', () => {
       const ripple = document.createElement('span');
       ripple.style.cssText = `
         position:absolute;border-radius:50%;
-        background:rgba(0,255,200,0.3);
+        background:rgba(245,158,11,0.3);
         width:60px;height:60px;
         left:${e.offsetX - 30}px;top:${e.offsetY - 30}px;
         pointer-events:none;

@@ -235,6 +235,10 @@ footer{position:relative;z-index:1;text-align:center;padding:2.5rem clamp(1.5rem
 .fade-left{opacity:0;transform:translateX(-28px);transition:opacity .6s ease,transform .6s ease}
 .fade-up.vis,.fade-left.vis{opacity:1;transform:none}
 
+/* Safety net — if JS fails or observer doesn't fire, show content after 2s */
+@keyframes forceShow{to{opacity:1;transform:none}}
+.fade-up,.fade-left{animation:forceShow 0s ease 2.5s forwards}
+
 /* RESPONSIVE */
 @media(max-width:1024px){
   .about-grid{grid-template-columns:1fr}
