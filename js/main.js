@@ -76,10 +76,10 @@
   if (!el) return;
 
   const phrases = [
-    'Full Stack Developer',
-    'React · Next.js · Node.js',
-    'TypeScript Enthusiast',
-    'Open to Opportunities 🇨🇦',
+    'Backend-First Full Stack Engineer',
+    'Node.js · PostgreSQL · Microservices',
+    'React · Next.js · TypeScript',
+    'Open to Work in Canada 🇨🇦',
   ];
   let pi = 0, ci = 0, deleting = false, wait = 0;
 

@@ -3,71 +3,54 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Het Shah — Full Stack Software Engineer. React, Next.js, Node.js, TypeScript. Based in Toronto, Canada."/>
-  <meta name="keywords" content="Het Shah, Full Stack Developer, React, Next.js, Node.js, TypeScript, Toronto, Portfolio"/>
+  <meta name="description" content="Het Shah — Full Stack Engineer. Node.js, PostgreSQL, React, Next.js, Microservices. Based in Brampton, Ontario, Canada."/>
+  <meta name="keywords" content="Het Shah, Full Stack Engineer, Node.js, PostgreSQL, React, Next.js, TypeScript, Brampton, Toronto, Portfolio"/>
   <meta name="author" content="Het Shah"/>
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Het Shah — Full Stack Developer"/>
-  <meta property="og:description" content="Full Stack Software Engineer based in Toronto, Canada. React · Next.js · Node.js · TypeScript."/>
+  <meta property="og:title" content="Het Shah — Full Stack Engineer"/>
+  <meta property="og:description" content="Full Stack Engineer based in Brampton, Ontario. Node.js · PostgreSQL · React · Next.js · Microservices."/>
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://hetshah.dev"/>
+  <meta property="og:url" content="https://het-shah-portfolio.vercel.app/"/>
+  <title>Het Shah — Full Stack Engineer</title>
 
-  <title>Het Shah — Full Stack Developer</title>
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet"/>
-
-  <!-- Stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 
-<!-- ── BACKGROUND ── -->
 <canvas id="matrix-canvas" aria-hidden="true"></canvas>
-
-<!-- ── CURSOR ── -->
-<div class="cur"      id="cur"     aria-hidden="true"></div>
+<div class="cur" id="cur" aria-hidden="true"></div>
 <div class="cur-ring" id="curRing" aria-hidden="true"></div>
 
-<!-- ── NAVIGATION ── -->
+<!-- NAV -->
 <nav role="navigation" aria-label="Main navigation">
-  <a href="#hero" class="nav-logo" aria-label="Het Shah Home">HS/</a>
-
+  <a href="#hero" class="nav-logo" aria-label="Het Shah Home">HS<span class="logo-slash">/</span></a>
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
-    <a href="#certifications">Certs</a>
     <a href="#education">Education</a>
     <a href="#contact">Contact</a>
     <a href="HET_SHAH_-_FULL_STACK_DEVELOPER.pdf" download class="nav-resume">⬇ Resume</a>
   </div>
-
-  <!-- Mobile hamburger -->
   <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- Mobile drawer -->
 <div class="nav-drawer" id="nav-drawer" aria-label="Mobile navigation">
   <a href="#about">About</a>
   <a href="#skills">Skills</a>
   <a href="#experience">Experience</a>
   <a href="#projects">Projects</a>
-  <a href="#certifications">Certs</a>
   <a href="#education">Education</a>
   <a href="#contact">Contact</a>
   <a href="HET_SHAH_-_FULL_STACK_DEVELOPER.pdf" download>⬇ Download Resume</a>
 </div>
 
-<!-- ─────────────────────────────────────────
-     HERO
-───────────────────────────────────────── -->
+<!-- HERO -->
 <section id="hero" aria-label="Introduction">
   <div class="hero-scanline" aria-hidden="true"></div>
   <div class="hero-scan-anim" aria-hidden="true"></div>
@@ -79,7 +62,7 @@
   <div class="hero-left">
     <div class="hero-status">
       <div class="sdot" aria-hidden="true"></div>
-      Open to Work &nbsp;·&nbsp; Toronto, ON CA
+      Open to Work &nbsp;·&nbsp; Brampton, ON CA
     </div>
 
     <h1 class="hero-name">HET<br/><span class="hl">SHAH</span></h1>
@@ -89,14 +72,14 @@
     </div>
 
     <p class="hero-sub">
-      Building scalable, production-ready web applications with React, Next.js &amp; Node.js.
-      2+ years shipping real software — from Vadodara to Toronto.
+      Backend-first Full Stack Engineer building scalable APIs, microservices &amp; production web apps with Node.js, PostgreSQL &amp; React.
+      3+ years shipping real software — from Gujarat to Toronto.
     </p>
 
     <div class="hero-ctas">
       <a href="#projects" class="btn-glow">View Projects</a>
-      <a href="#contact"  class="btn-ol">Get In Touch</a>
-      <a href="HET_SHAH_-_FULL_STACK_DEVELOPER.pdf" download class="btn-ol">⬇ Het's Resume</a>
+      <a href="#contact" class="btn-ol">Get In Touch</a>
+      <a href="HET_SHAH_-_FULL_STACK_DEVELOPER.pdf" download class="btn-ol">⬇ Resume</a>
     </div>
   </div>
 
@@ -108,13 +91,11 @@
       <div class="av-initials">HS</div>
       <div class="av-badge"><div class="sdot"></div> Available</div>
     </div>
-    <div class="av-label">// full_stack_dev.exe</div>
+    <div class="av-label">// backend_first.exe</div>
   </div>
 </section>
 
-<!-- ─────────────────────────────────────────
-     ABOUT
-───────────────────────────────────────── -->
+<!-- ABOUT -->
 <section id="about">
   <div class="about-wrap">
     <div class="section-header fade-up">
@@ -126,20 +107,13 @@
     <div class="about-grid">
       <div class="fade-left">
         <div class="about-text">
-          <p>I'm a <strong>Full Stack Software Engineer</strong> with 2+ years of experience building
-          <span class="c">scalable, production-ready</span> applications. I thrive at the intersection
-          of clean architecture and fast execution.</p>
+          <p>I'm a <strong>Full Stack Engineer</strong> with a backend-first approach — specializing in Node.js, Express.js, PostgreSQL, MongoDB, and microservices architecture. I build scalable APIs and systems that run reliably in production.</p>
 
-          <p>Currently based in <strong>Toronto, Canada</strong> — recently completed my
-          <span class="c">Post Graduate Certificate in IT Solutions</span> from Humber Polytechnic
-          (GPA 3.5/4.0). My engineering roots come from <strong>Computer Engineering at SVIT, Gujarat</strong>.</p>
+          <p>Currently at <strong>Void Enterprise</strong> (Brampton, ON) — architecting backend systems end-to-end. Previously shipped full-stack features at <strong>RewardsX</strong> (Vancouver) and <strong>Kashcandi Technology Solutions</strong> (India) over 3+ years of professional experience.</p>
 
-          <p>My core stack is <span class="c">React · Next.js · Node.js · TypeScript · MongoDB</span>,
-          but I'm always adapting. I've shipped production features at <strong>RewardsX</strong> in
-          Vancouver and <strong>Kashcandi Technology Solutions</strong> in India.</p>
+          <p>Completed my <span class="c">Post Graduate Certificate in IT Solutions</span> from Humber Polytechnic (Dean's Honours List — all semesters, GPA 3.5/4.0) and a <strong>B.E. in Computer Engineering</strong> from SVIT, Gujarat.</p>
         </div>
 
-        <!-- Terminal widget -->
         <div class="term">
           <div class="term-bar">
             <div class="td r"></div><div class="td y"></div><div class="td g"></div>
@@ -149,12 +123,13 @@
             <div class="tl"><span class="tp">~/portfolio $</span> cat about.json</div>
             <div class="tl">{</div>
             <div class="tl">&nbsp;&nbsp;<span class="tk">"name"</span>:&nbsp;<span class="ts">"Het Shah"</span>,</div>
-            <div class="tl">&nbsp;&nbsp;<span class="tk">"role"</span>:&nbsp;<span class="ts">"Full Stack Developer"</span>,</div>
-            <div class="tl">&nbsp;&nbsp;<span class="tk">"location"</span>:&nbsp;<span class="ts">"Toronto, ON CA"</span>,</div>
-            <div class="tl">&nbsp;&nbsp;<span class="tk">"experience"</span>:&nbsp;<span class="tn">2</span>,</div>
+            <div class="tl">&nbsp;&nbsp;<span class="tk">"role"</span>:&nbsp;<span class="ts">"Full Stack Engineer"</span>,</div>
+            <div class="tl">&nbsp;&nbsp;<span class="tk">"focus"</span>:&nbsp;<span class="ts">"Backend · APIs · Microservices"</span>,</div>
+            <div class="tl">&nbsp;&nbsp;<span class="tk">"location"</span>:&nbsp;<span class="ts">"Brampton, ON CA"</span>,</div>
+            <div class="tl">&nbsp;&nbsp;<span class="tk">"experience"</span>:&nbsp;<span class="tn">3</span>,</div>
             <div class="tl">&nbsp;&nbsp;<span class="tk">"openToWork"</span>:&nbsp;<span class="tv">true</span>,</div>
-            <div class="tl">&nbsp;&nbsp;<span class="tk">"stack"</span>:&nbsp;[<span class="ts">"React"</span>,&nbsp;<span class="ts">"Next.js"</span>,&nbsp;<span class="ts">"Node.js"</span>],</div>
-            <div class="tl">&nbsp;&nbsp;<span class="tk">"linkedin"</span>:&nbsp;<span class="ts">"hetshah2406"</span></div>
+            <div class="tl">&nbsp;&nbsp;<span class="tk">"stack"</span>:&nbsp;[<span class="ts">"Node.js"</span>,&nbsp;<span class="ts">"PostgreSQL"</span>,&nbsp;<span class="ts">"React"</span>],</div>
+            <div class="tl">&nbsp;&nbsp;<span class="tk">"deansHonours"</span>:&nbsp;<span class="tv">true</span></div>
             <div class="tl">}</div>
           </div>
         </div>
@@ -163,11 +138,11 @@
       <div class="fade-up">
         <div class="stats-grid">
           <div class="stat-box">
-            <div class="stat-num" data-count="2">0</div>
+            <div class="stat-num" data-count="3">0</div>
             <div class="stat-lbl">Years Exp</div>
           </div>
           <div class="stat-box">
-            <div class="stat-num" data-count="4">0</div>
+            <div class="stat-num" data-count="5">0</div>
             <div class="stat-lbl">Projects</div>
           </div>
           <div class="stat-box">
@@ -184,9 +159,7 @@
   </div>
 </section>
 
-<!-- ─────────────────────────────────────────
-     SKILLS
-───────────────────────────────────────── -->
+<!-- SKILLS -->
 <section id="skills">
   <div class="skills-wrap">
     <div class="section-header fade-up">
@@ -196,6 +169,17 @@
     </div>
 
     <div class="skills-grid">
+      <div class="skill-card fade-up">
+        <div class="skill-icon">⚙️</div>
+        <div class="skill-cat">Backend</div>
+        <div class="tags">
+          <span class="tag">Node.js</span><span class="tag">Express.js</span>
+          <span class="tag">REST APIs</span><span class="tag">Microservices</span>
+          <span class="tag">Swagger UI</span><span class="tag">JWT Auth</span>
+          <span class="tag">FastAPI</span><span class="tag">Laravel</span>
+        </div>
+      </div>
+
       <div class="skill-card fade-up">
         <div class="skill-icon">⚛️</div>
         <div class="skill-cat">Frontend</div>
@@ -208,21 +192,10 @@
       </div>
 
       <div class="skill-card fade-up">
-        <div class="skill-icon">⚙️</div>
-        <div class="skill-cat">Backend</div>
-        <div class="tags">
-          <span class="tag">Node.js</span><span class="tag">Express.js</span>
-          <span class="tag">REST APIs</span><span class="tag">FastAPI</span>
-          <span class="tag">Java</span><span class="tag">Spring Boot</span>
-          <span class="tag">JWT Auth</span><span class="tag">Microservices</span>
-        </div>
-      </div>
-
-      <div class="skill-card fade-up">
         <div class="skill-icon">🗄️</div>
         <div class="skill-cat">Databases</div>
         <div class="tags">
-          <span class="tag">MongoDB</span><span class="tag">PostgreSQL</span>
+          <span class="tag">PostgreSQL</span><span class="tag">MongoDB</span>
           <span class="tag">MySQL</span><span class="tag">Firebase Firestore</span>
         </div>
       </div>
@@ -234,38 +207,36 @@
           <span class="tag">AWS EC2</span><span class="tag">AWS S3</span>
           <span class="tag">Docker</span><span class="tag">Vercel</span>
           <span class="tag">Render</span><span class="tag">Firebase</span>
-          <span class="tag">CI/CD</span><span class="tag">Git</span>
+          <span class="tag">CI/CD</span><span class="tag">GitHub Actions</span>
         </div>
       </div>
 
       <div class="skill-card fade-up">
-        <div class="skill-icon">🧠</div>
-        <div class="skill-cat">Concepts</div>
+        <div class="skill-icon">📱</div>
+        <div class="skill-cat">Mobile</div>
         <div class="tags">
-          <span class="tag">OOP</span><span class="tag">MVC</span>
-          <span class="tag">Agile/Scrum</span><span class="tag">System Design</span>
-          <span class="tag">SEO</span><span class="tag">Auth &amp; Authz</span>
-          <span class="tag">Performance</span><span class="tag">SDLC</span>
+          <span class="tag">Kotlin (Android)</span>
+          <span class="tag">Swift (iOS)</span>
+          <span class="tag">SwiftUI</span>
+          <span class="tag">JavaFX</span>
         </div>
       </div>
 
       <div class="skill-card fade-up">
         <div class="skill-icon">🛠️</div>
-        <div class="skill-cat">Tools &amp; Languages</div>
+        <div class="skill-cat">Languages &amp; Tools</div>
         <div class="tags">
-          <span class="tag">Python</span><span class="tag">SQL</span>
-          <span class="tag">PHP</span><span class="tag">Laravel</span>
-          <span class="tag">Postman</span><span class="tag">VS Code</span>
-          <span class="tag">GitHub</span>
+          <span class="tag">Java</span><span class="tag">Python</span>
+          <span class="tag">SQL</span><span class="tag">Git</span>
+          <span class="tag">Postman</span><span class="tag">GitHub Copilot</span>
+          <span class="tag">VS Code</span><span class="tag">OOP · MVC · SDLC</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─────────────────────────────────────────
-     EXPERIENCE
-───────────────────────────────────────── -->
+<!-- EXPERIENCE -->
 <section id="experience">
   <div class="exp-wrap">
     <div class="section-header fade-up">
@@ -274,23 +245,64 @@
       <div class="sline"></div>
     </div>
 
-    <div>
+    <div class="exp-timeline">
+
+      <!-- Void Enterprise Full-time -->
+      <article class="exp-item fade-up">
+        <div class="exp-date">
+          Sept 2025 — Present
+          <div class="exp-loc">Remote · Brampton, ON CA</div>
+          <div class="exp-badge">Full-time</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-company">Void Enterprise</div>
+          <div class="exp-role">// Full Stack Engineer</div>
+          <ul class="exp-bullets">
+            <li>Designed and developed scalable RESTful APIs using <strong>Node.js and Express</strong>, powering core business logic across microservices.</li>
+            <li>Built and maintained <strong>PostgreSQL</strong> databases including schema design, query optimization, and data modeling for production systems.</li>
+            <li>Documented APIs using <strong>Swagger UI</strong>, enabling clear service contracts and improving developer onboarding experience.</li>
+            <li>Architected <strong>microservice-based backend systems</strong> ensuring loose coupling and independent deployability across services.</li>
+            <li>Integrated <strong>Next.js</strong> frontend with backend APIs, owning the full feature lifecycle from database to UI.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Void Enterprise Intern -->
+      <article class="exp-item fade-up">
+        <div class="exp-date">
+          July 2024 — Feb 2025
+          <div class="exp-loc">Remote · Brampton, ON CA</div>
+          <div class="exp-badge exp-badge-intern">Internship</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-company">Void Enterprise</div>
+          <div class="exp-role">// Software Engineer Intern</div>
+          <ul class="exp-bullets">
+            <li>Developed backend APIs with <strong>Node.js and Express</strong> as part of an agile team delivering custom software solutions.</li>
+            <li>Worked with <strong>PostgreSQL</strong> to write and optimize queries supporting reliable data persistence across features.</li>
+            <li>Contributed to <strong>microservices architecture</strong>, learning distributed system patterns under senior engineer guidance.</li>
+            <li>Assisted in API documentation using <strong>Swagger UI</strong>, maintaining consistent endpoint specs across the codebase.</li>
+            <li>Collaborated in sprint-based delivery cycles, shipping backend features end-to-end.</li>
+          </ul>
+        </div>
+      </article>
+
       <!-- RewardsX -->
       <article class="exp-item fade-up">
         <div class="exp-date">
           May 2025 — Aug 2025
-          <div class="exp-loc">Vancouver, BC CA</div>
+          <div class="exp-loc">Remote · Vancouver, BC CA</div>
+          <div class="exp-badge exp-badge-intern">Contract</div>
         </div>
-        <div>
+        <div class="exp-content">
           <div class="exp-company">RewardsX</div>
-          <div class="exp-role">// Full Stack Developer Intern</div>
+          <div class="exp-role">// Full Stack Developer</div>
           <ul class="exp-bullets">
-            <li>Led full-stack feature development using React, Next.js App Router, Node.js, TypeScript, and MongoDB.</li>
-            <li>Designed and implemented scalable RESTful APIs and production-grade backend services.</li>
-            <li>Integrated third-party APIs and external services to extend platform functionality.</li>
-            <li>Improved application performance through optimized components and efficient API design.</li>
-            <li>Collaborated with cross-functional teams in Agile/Scrum; used Git, Postman, and CI/CD pipelines.</li>
-            <li>Contributed to database design, query optimization, and production issue resolution.</li>
+            <li>Led a team of 3 developers delivering merchant-facing workflows using <strong>React, Next.js, Node.js, TypeScript, and MongoDB</strong>.</li>
+            <li>Designed and implemented scalable <strong>RESTful APIs</strong>, third-party integrations, and backend performance optimizations.</li>
+            <li>Improved application performance through query optimization, API refactoring, and efficient component design.</li>
+            <li>Worked with <strong>Git, Postman, and CI/CD pipelines</strong>, participating in code reviews and production issue resolution.</li>
+            <li>Collaborated cross-functionally in an <strong>Agile/Scrum</strong> environment delivering feature enhancements on schedule.</li>
           </ul>
         </div>
       </article>
@@ -300,25 +312,25 @@
         <div class="exp-date">
           Feb 2022 — Aug 2023
           <div class="exp-loc">Gujarat, India 🇮🇳</div>
+          <div class="exp-badge exp-badge-intern">Full-time</div>
         </div>
-        <div>
+        <div class="exp-content">
           <div class="exp-company">Kashcandi Technology Solutions</div>
           <div class="exp-role">// Software Developer</div>
           <ul class="exp-bullets">
-            <li>Built and maintained responsive web applications using React, Node.js, HTML, and CSS.</li>
-            <li>Integrated REST APIs ensuring accurate and reliable frontend-backend data flow.</li>
+            <li>Built and maintained full stack web applications using <strong>React, JavaScript, Node.js, HTML, and CSS</strong>.</li>
+            <li>Built and consumed <strong>RESTful APIs</strong> supporting backend business logic and third-party service integrations.</li>
             <li>Improved frontend performance through component refactoring and optimized state management.</li>
-            <li>Maintained code quality and testing standards throughout the full SDLC.</li>
+            <li>Maintained code quality and testing standards throughout the full SDLC in an Agile environment.</li>
           </ul>
         </div>
       </article>
+
     </div>
   </div>
 </section>
 
-<!-- ─────────────────────────────────────────
-     PROJECTS
-───────────────────────────────────────── -->
+<!-- PROJECTS -->
 <section id="projects">
   <div class="proj-wrap">
     <div class="section-header fade-up">
@@ -364,7 +376,7 @@
         <div class="proj-glow" aria-hidden="true"></div>
         <div class="proj-num">03</div>
         <div class="proj-name">Health Management System</div>
-        <div class="proj-desc">Desktop healthcare app in Java + JavaFX. Full patient/appointment CRUD, MVC architecture, binary file persistence, and an interactive dashboard with data export.</div>
+        <div class="proj-desc">Desktop healthcare app in Java + JavaFX. Full patient/appointment CRUD, MVC architecture, binary file persistence, and an interactive dashboard with data export. Demonstrates strong OOP and backend logic.</div>
         <div class="proj-stack">
           <span class="ptag">Java</span><span class="ptag">JavaFX</span>
           <span class="ptag">MVC</span><span class="ptag">File I/O</span>
@@ -393,94 +405,44 @@
         </div>
       </article>
 
+      <article class="proj-card fade-up">
+        <div class="proj-glow" aria-hidden="true"></div>
+        <div class="proj-num">05</div>
+        <div class="proj-name">Favourite Places Tracker</div>
+        <div class="proj-desc">iOS location-based app with Firebase authentication, Google Maps API integration, and a map-based UI for saving and exploring favourite places.</div>
+        <div class="proj-stack">
+          <span class="ptag">SwiftUI</span><span class="ptag">Firebase</span><span class="ptag">Google Maps API</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/HetShah24-06" target="_blank" rel="noopener" class="proj-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
 
-<!-- ─────────────────────────────────────────
-     CERTIFICATIONS
-───────────────────────────────────────── -->
-<section id="certifications">
-  <div class="certs-wrap">
-    <div class="section-header fade-up">
-      <div class="stag"><span></span>05 — Certifications</div>
-      <h2 class="stitle">My <span class="ac">Credentials</span></h2>
-      <div class="sline"></div>
-    </div>
-
-    <div class="certs-grid">
-      <div class="cert-card fade-up">
-        <div class="cert-icon">🤖</div>
-        <div class="cert-body">
-          <div class="cert-name">AI Fundamentals</div>
-          <div class="cert-issuer">Microsoft &amp; LinkedIn</div>
-        </div>
-      </div>
-      <div class="cert-card fade-up">
-        <div class="cert-icon">⚡</div>
-        <div class="cert-body">
-          <div class="cert-name">JavaScript Essential Training</div>
-          <div class="cert-issuer">LinkedIn Learning</div>
-        </div>
-      </div>
-      <div class="cert-card fade-up">
-        <div class="cert-icon">⚛️</div>
-        <div class="cert-body">
-          <div class="cert-name">React.js Essential Training</div>
-          <div class="cert-issuer">LinkedIn Learning</div>
-        </div>
-      </div>
-      <div class="cert-card fade-up">
-        <div class="cert-icon">🟢</div>
-        <div class="cert-body">
-          <div class="cert-name">Node.js Essential Training</div>
-          <div class="cert-issuer">LinkedIn Learning</div>
-        </div>
-      </div>
-      <div class="cert-card fade-up">
-        <div class="cert-icon">🔷</div>
-        <div class="cert-body">
-          <div class="cert-name">TypeScript Essential Training</div>
-          <div class="cert-issuer">LinkedIn Learning</div>
-        </div>
-      </div>
-      <div class="cert-card fade-up">
-        <div class="cert-icon">🌐</div>
-        <div class="cert-body">
-          <div class="cert-name">REST APIs &amp; Web Services</div>
-          <div class="cert-issuer">LinkedIn Learning</div>
-        </div>
-      </div>
-      <div class="cert-card fade-up">
-        <div class="cert-icon">🐙</div>
-        <div class="cert-body">
-          <div class="cert-name">Git &amp; GitHub for Developers</div>
-          <div class="cert-issuer">LinkedIn Learning</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─────────────────────────────────────────
-     EDUCATION
-───────────────────────────────────────── -->
+<!-- EDUCATION -->
 <section id="education">
   <div class="edu-wrap">
     <div class="section-header fade-up">
-      <div class="stag"><span></span>06 — Education</div>
+      <div class="stag"><span></span>05 — Education</div>
       <h2 class="stitle">Academic <span class="ac">Background</span></h2>
       <div class="sline"></div>
     </div>
 
     <div class="edu-grid fade-up">
       <div class="edu-card">
-        <div class="edu-flag">CA</div>
+        <div class="edu-flag">🇨🇦</div>
         <div class="edu-degree">Post Graduate Certificate</div>
         <div class="edu-field">// Information Technology Solutions</div>
         <div class="edu-school">Humber Polytechnic</div>
         <div class="edu-meta">Jan 2024 – Aug 2025 · Toronto, ON</div>
         <div class="edu-gpa">⭐ GPA 3.50 / 4.0</div>
+        <div class="edu-honours">🏆 Dean's Honours List — All Semesters</div>
       </div>
       <div class="edu-card">
         <div class="edu-flag">🇮🇳</div>
@@ -494,16 +456,34 @@
   </div>
 </section>
 
-<!-- ─────────────────────────────────────────
-     CONTACT
-───────────────────────────────────────── -->
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="certs-wrap">
+    <div class="section-header fade-up">
+      <div class="stag"><span></span>06 — Certifications</div>
+      <h2 class="stitle">My <span class="ac">Credentials</span></h2>
+      <div class="sline"></div>
+    </div>
+
+    <div class="certs-grid">
+      <div class="cert-card fade-up"><div class="cert-icon">🤖</div><div class="cert-body"><div class="cert-name">AI Fundamentals</div><div class="cert-issuer">Microsoft &amp; LinkedIn</div></div></div>
+      <div class="cert-card fade-up"><div class="cert-icon">⚡</div><div class="cert-body"><div class="cert-name">JavaScript Essential Training</div><div class="cert-issuer">LinkedIn Learning</div></div></div>
+      <div class="cert-card fade-up"><div class="cert-icon">⚛️</div><div class="cert-body"><div class="cert-name">React.js Essential Training</div><div class="cert-issuer">LinkedIn Learning</div></div></div>
+      <div class="cert-card fade-up"><div class="cert-icon">🟢</div><div class="cert-body"><div class="cert-name">Node.js Essential Training</div><div class="cert-issuer">LinkedIn Learning</div></div></div>
+      <div class="cert-card fade-up"><div class="cert-icon">🔷</div><div class="cert-body"><div class="cert-name">TypeScript Essential Training</div><div class="cert-issuer">LinkedIn Learning</div></div></div>
+      <div class="cert-card fade-up"><div class="cert-icon">🌐</div><div class="cert-body"><div class="cert-name">REST APIs &amp; Web Services</div><div class="cert-issuer">LinkedIn Learning</div></div></div>
+      <div class="cert-card fade-up"><div class="cert-icon">🐙</div><div class="cert-body"><div class="cert-name">Git &amp; GitHub for Developers</div><div class="cert-issuer">LinkedIn Learning</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
 <section id="contact">
   <div class="contact-wrap">
     <div class="stag" style="justify-content:center"><span></span>07 — Contact<span></span></div>
     <div class="contact-big">Let's <span class="c">Connect</span></div>
     <p class="contact-sub">
-      Actively seeking full-stack developer roles in Canada. If you have an opportunity,
-      a project, or just want to talk tech — I'm always a message away.
+      Actively seeking full-time Software Engineer roles across Canada. Remote, hybrid, or on-site — I'm open. If you have an opportunity or just want to talk tech, I'm always a message away.
     </p>
 
     <div class="contact-grid">
@@ -532,17 +512,14 @@
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
 <footer>
-  <div class="footer-logo">HS/</div>
-  <span>© 2025 Het Shah — Full Stack Developer</span>
-  <span>Built with <span class="footer-heart">♥</span> &amp; VS Code · Toronto CA</span>
+  <div class="footer-logo">HS<span class="logo-slash">/</span></div>
+  <span>© 2025 Het Shah — Full Stack Engineer</span>
+  <span>Built with <span class="footer-heart">♥</span> &amp; VS Code · Brampton, ON CA</span>
 </footer>
 
-<!-- Back to top -->
-<a href="#hero" id="back-top" aria-label="Back to top">↑</a>
+<button id="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
-<!-- ── SCRIPTS ── -->
 <script src="js/main.js"></script>
 </body>
 </html>
