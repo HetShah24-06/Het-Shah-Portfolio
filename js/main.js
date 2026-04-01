@@ -4,119 +4,146 @@
 
 /* ── 1. NAV scroll + active + hamburger ── */
 (function initNav() {
-  const sections = document.querySelectorAll('section[id]');
-  const links = document.querySelectorAll('.nav-links a[href^="#"], .nav-drawer a[href^="#"]');
-  const btn = document.getElementById('nav-hamburger');
-  const drawer = document.getElementById('nav-drawer');
-  const backTop = document.getElementById('back-top');
+  const sections = document.querySelectorAll("section[id]");
+  const links = document.querySelectorAll(
+    '.nav-links a[href^="#"], .nav-drawer a[href^="#"]',
+  );
+  const btn = document.getElementById("nav-hamburger");
+  const drawer = document.getElementById("nav-drawer");
+  const backTop = document.getElementById("back-top");
   let drawerOpen = false;
 
-  /* Scroll handler */
-  window.addEventListener('scroll', () => {
-    if (backTop) backTop.classList.toggle('visible', window.scrollY > 400);
-    let current = '';
-    sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+  /* ── Back to top ── */
+  if (backTop) {
+    backTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
-    links.forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-    });
-  }, { passive: true });
+  }
 
-  /* Hamburger toggle */
+  /* ── Scroll: back-to-top + active nav ── */
+  function onScroll() {
+    if (backTop) {
+      if (window.scrollY > 300) {
+        backTop.classList.add("visible");
+      } else {
+        backTop.classList.remove("visible");
+      }
+    }
+    let current = "";
+    sections.forEach(function (sec) {
+      if (window.scrollY >= sec.offsetTop - 140) current = sec.id;
+    });
+    links.forEach(function (a) {
+      a.classList.toggle("active", a.getAttribute("href") === "#" + current);
+    });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* ── Hamburger ── */
   function openDrawer() {
     drawerOpen = true;
-    drawer.classList.add('open');
-    btn.classList.add('open');
-    btn.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
+    drawer.classList.add("open");
+    btn.classList.add("open");
+    btn.setAttribute("aria-expanded", "true");
   }
+
   function closeDrawer() {
     drawerOpen = false;
-    drawer.classList.remove('open');
-    btn.classList.remove('open');
-    btn.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+    drawer.classList.remove("open");
+    btn.classList.remove("open");
+    btn.setAttribute("aria-expanded", "false");
   }
 
   if (btn && drawer) {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
       e.stopPropagation();
-      drawerOpen ? closeDrawer() : openDrawer();
+      if (drawerOpen) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
     });
 
-    /* Close when a nav link is clicked */
-    drawer.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => closeDrawer());
+    drawer.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () {
+        closeDrawer();
+      });
     });
 
-    /* Close when clicking outside */
-    document.addEventListener('click', (e) => {
+    document.addEventListener("click", function (e) {
       if (drawerOpen && !drawer.contains(e.target) && !btn.contains(e.target)) {
         closeDrawer();
       }
     });
 
-    /* Close on Escape key */
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && drawerOpen) closeDrawer();
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && drawerOpen) closeDrawer();
     });
   }
 })();
 
 /* ── 2. SCROLL REVEAL ── */
 (function initReveal() {
-  const els = document.querySelectorAll('.reveal');
+  const els = document.querySelectorAll(".reveal");
   if (!els.length) return;
 
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('revealed');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("revealed");
+          io.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.05, rootMargin: "0px 0px -40px 0px" },
+  );
 
-  els.forEach(el => io.observe(el));
+  els.forEach((el) => io.observe(el));
 })();
 
 /* ── 3. HERO ENTRANCE ── */
-window.addEventListener('load', () => {
+window.addEventListener("load", () => {
   const items = [
-    '.hero-avail', '.hero-heading', '.hero-desc',
-    '.hero-actions', '.hero-stats', '.hero-right'
+    ".hero-avail",
+    ".hero-heading",
+    ".hero-desc",
+    ".hero-actions",
+    ".hero-stats",
+    ".hero-right",
   ];
   items.forEach((sel, i) => {
     const el = document.querySelector(sel);
     if (!el) return;
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
+    el.style.opacity = "0";
+    el.style.transform = "translateY(20px)";
     el.style.transition = `opacity 0.7s ease ${i * 0.1}s, transform 0.7s ease ${i * 0.1}s`;
     setTimeout(() => {
-      el.style.opacity = '1';
-      el.style.transform = 'translateY(0)';
+      el.style.opacity = "1";
+      el.style.transform = "translateY(0)";
     }, 60);
   });
 });
 
 /* ── 4. SMOOTH SCROLL ── */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  a.addEventListener("click", (e) => {
+    const target = document.querySelector(a.getAttribute("href"));
     if (!target) return;
     e.preventDefault();
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
 
 /* ── 5. PROJECT ROW HOVER SOUND EFFECT (subtle) ── */
-document.querySelectorAll('.proj-row').forEach(row => {
-  row.addEventListener('mouseenter', () => {
-    row.style.paddingLeft = '0.5rem';
-    row.style.transition = 'padding 0.2s ease';
+document.querySelectorAll(".proj-row").forEach((row) => {
+  row.addEventListener("mouseenter", () => {
+    row.style.paddingLeft = "0.5rem";
+    row.style.transition = "padding 0.2s ease";
   });
-  row.addEventListener('mouseleave', () => {
-    row.style.paddingLeft = '0';
+  row.addEventListener("mouseleave", () => {
+    row.style.paddingLeft = "0";
   });
 });

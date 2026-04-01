@@ -1,6 +1,5 @@
 /* ============================================================
    HET SHAH — Portfolio
-   
    Font: Outfit (clean, modern geometric sans)
    ============================================================ */
 
@@ -63,9 +62,16 @@ nav {
 .nav-cta:hover { opacity: 0.8; }
 
 .nav-hamburger {
-  display: none; flex-direction: column; gap: 5px;
-  background: none; border: none; cursor: pointer; padding: 8px;
-  z-index: 101;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 .nav-hamburger span {
   display: block; width: 22px; height: 2px;
@@ -77,20 +83,26 @@ nav {
 .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 .nav-drawer {
-  position: fixed; top: var(--nav-h); left: 0; right: 0; z-index: 99;
+  position: fixed;
+  top: var(--nav-h);
+  left: 0;
+  right: 0;
+  z-index: 999;
   background: #f5f3ef;
-  display: flex; flex-direction: column;
-  padding: 0; max-height: 0; overflow: hidden;
-  border-bottom: 1px solid transparent;
-  transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1),
-              padding 0.35s ease,
-              border-color 0.3s ease;
-  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1.5rem 1.75rem;
+  border-bottom: 1px solid var(--border);
+  transform: translateY(-110%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 .nav-drawer.open {
-  max-height: 520px; padding: 1.25rem 1.5rem 1.75rem;
-  border-bottom-color: var(--border);
-  visibility: visible;
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
 }
 .nav-drawer a {
   font-size: 1rem; font-weight: 500; color: var(--gray);
@@ -428,17 +440,29 @@ footer {
 
 /* ── BACK TO TOP ── */
 #back-top {
-  position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
-  width: 44px; height: 44px; border-radius: 50%;
-  background: var(--black); border: none; color: var(--white);
-  font-size: 1rem; cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; pointer-events: none;
-  transition: opacity var(--trans), transform var(--trans);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--black);
+  border: none;
+  color: var(--white);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  -webkit-tap-highlight-color: transparent;
 }
 #back-top.visible { opacity: 1; pointer-events: auto; }
-#back-top:hover { transform: translateY(-3px); }
+#back-top:hover, #back-top:active { transform: translateY(-3px); }
 
 
 /* ── TECH LOGOS ── */
