@@ -4,517 +4,444 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Het Shah — Full Stack Engineer. Node.js, PostgreSQL, React, Next.js, Microservices. Based in Brampton, Ontario, Canada."/>
-  <meta name="keywords" content="Het Shah, Full Stack Engineer, Node.js, PostgreSQL, React, Next.js, TypeScript, Brampton, Toronto, Portfolio"/>
   <meta name="author" content="Het Shah"/>
   <meta property="og:title" content="Het Shah — Full Stack Engineer"/>
-  <meta property="og:description" content="Full Stack Engineer based in Brampton, Ontario. Node.js · PostgreSQL · React · Next.js · Microservices."/>
+  <meta property="og:description" content="Full Stack Engineer. Node.js · PostgreSQL · React · Microservices."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://het-shah-portfolio.vercel.app/"/>
   <title>Het Shah — Full Stack Engineer</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 
-<div class="cur" id="cur" aria-hidden="true"></div>
-<div class="cur-ring" id="curRing" aria-hidden="true"></div>
-
 <!-- NAV -->
-<nav role="navigation" aria-label="Main navigation">
-  <a href="#hero" class="nav-logo" aria-label="Het Shah Home">HS<span class="logo-slash">/</span></a>
+<nav>
+  <a href="#hero" class="nav-logo">Het Shah</a>
   <div class="nav-links">
     <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
-    <a href="HET_SHAH_-_FULL_STACK_DEVELOPER.pdf" download class="nav-resume">⬇ Resume</a>
+    <a href="HET_SHAH_-_FULL_STACK_DEVELOPER.pdf" download class="nav-cta">Download CV</a>
   </div>
   <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<div class="nav-drawer" id="nav-drawer" aria-label="Mobile navigation">
+<div class="nav-drawer" id="nav-drawer">
   <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#experience">Experience</a>
   <a href="#projects">Projects</a>
-  <a href="#education">Education</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
   <a href="#contact">Contact</a>
-  <a href="HET_SHAH_-_FULL_STACK_DEVELOPER.pdf" download>⬇ Download Resume</a>
+  <a href="HET_SHAH_-_FULL_STACK_DEVELOPER.pdf" download>Download CV</a>
 </div>
 
 <!-- HERO -->
-<section id="hero" aria-label="Introduction">
-  <div class="hero-scanline" aria-hidden="true"></div>
-  <div class="hero-scan-anim" aria-hidden="true"></div>
-  <div class="hc tl" aria-hidden="true"></div>
-  <div class="hc tr" aria-hidden="true"></div>
-  <div class="hc bl" aria-hidden="true"></div>
-  <div class="hc br" aria-hidden="true"></div>
-
-  <div class="hero-left">
-    <div class="hero-status">
-      <div class="sdot" aria-hidden="true"></div>
-      Open to Work &nbsp;·&nbsp; Brampton, ON CA
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-avail">
+        <span class="avail-dot"></span> Available for work
+      </div>
+      <h1 class="hero-heading">FULL STACK<br/><span class="hero-outline">ENGINEER</span></h1>
+      <p class="hero-desc">
+        Backend-first engineer building scalable APIs, microservices &amp; production web apps. 3+ years shipping real software across Canada and India.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-ghost">Get In Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat">
+          <div class="hstat-num">3+</div>
+          <div class="hstat-lbl">Years of<br/>Experience</div>
+        </div>
+        <div class="hstat-div"></div>
+        <div class="hstat">
+          <div class="hstat-num">5+</div>
+          <div class="hstat-lbl">Projects<br/>Completed</div>
+        </div>
+        <div class="hstat-div"></div>
+        <div class="hstat">
+          <div class="hstat-num">3.5</div>
+          <div class="hstat-lbl">Humber<br/>GPA</div>
+        </div>
+      </div>
     </div>
 
-    <h1 class="hero-name">HET<br/><span class="hl">SHAH</span></h1>
-
-    <div class="hero-title" aria-label="Role">
-      <span id="typed"></span><span class="tcursor" aria-hidden="true"></span>
+    <div class="hero-right">
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-placeholder">
+          <span class="hero-initials">HS</span>
+        </div>
+        <div class="hero-photo-tag">
+          <span class="avail-dot"></span> Open to Work · Brampton, ON CA
+        </div>
+      </div>
     </div>
-
-    <p class="hero-sub">
-      Backend-first Full Stack Engineer building scalable APIs, microservices &amp; production web apps with Node.js, PostgreSQL &amp; React.
-      3+ years shipping real software — from Gujarat to Toronto.
-    </p>
-
-    <div class="hero-ctas">
-      <a href="#projects" class="btn-glow">View Projects</a>
-      <a href="#contact" class="btn-ol">Get In Touch</a>
-      <a href="HET_SHAH_-_FULL_STACK_DEVELOPER.pdf" download class="btn-ol">⬇ Resume</a>
-    </div>
-  </div>
-
-  <div class="hero-avatar" aria-hidden="true">
-    <div class="avatar-frame">
-      <div class="av-blob"></div>
-      <div class="av-ring"></div>
-      <div class="av-ring2"></div>
-      <div class="av-initials">HS</div>
-      <div class="av-badge"><div class="sdot"></div> Available</div>
-    </div>
-    <div class="av-label">// backend_first.exe</div>
   </div>
 </section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span>Node.js</span><span class="ticker-dot">✦</span>
+    <span>PostgreSQL</span><span class="ticker-dot">✦</span>
+    <span>REST APIs</span><span class="ticker-dot">✦</span>
+    <span>Microservices</span><span class="ticker-dot">✦</span>
+    <span>React</span><span class="ticker-dot">✦</span>
+    <span>Next.js</span><span class="ticker-dot">✦</span>
+    <span>TypeScript</span><span class="ticker-dot">✦</span>
+    <span>MongoDB</span><span class="ticker-dot">✦</span>
+    <span>Swagger UI</span><span class="ticker-dot">✦</span>
+    <span>Docker</span><span class="ticker-dot">✦</span>
+    <span>AWS</span><span class="ticker-dot">✦</span>
+    <span>Node.js</span><span class="ticker-dot">✦</span>
+    <span>PostgreSQL</span><span class="ticker-dot">✦</span>
+    <span>REST APIs</span><span class="ticker-dot">✦</span>
+    <span>Microservices</span><span class="ticker-dot">✦</span>
+    <span>React</span><span class="ticker-dot">✦</span>
+    <span>Next.js</span><span class="ticker-dot">✦</span>
+    <span>TypeScript</span><span class="ticker-dot">✦</span>
+    <span>MongoDB</span><span class="ticker-dot">✦</span>
+    <span>Swagger UI</span><span class="ticker-dot">✦</span>
+    <span>Docker</span><span class="ticker-dot">✦</span>
+    <span>AWS</span><span class="ticker-dot">✦</span>
+  </div>
+</div>
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="about-wrap">
-    <div class="section-header fade-up">
-      <div class="stag"><span></span>01 — About Me</div>
-      <h2 class="stitle">Who I <span class="ac">Am</span></h2>
-      <div class="sline"></div>
-    </div>
-
+  <div class="section-inner">
+    <div class="section-label">01 — About Me</div>
     <div class="about-grid">
-      <div class="fade-left">
-        <div class="about-text">
-          <p>I'm a <strong>Full Stack Engineer</strong> with a backend-first approach — specializing in Node.js, Express.js, PostgreSQL, MongoDB, and microservices architecture. I build scalable APIs and systems that run reliably in production.</p>
-
-          <p>Currently at <strong>Void Enterprise</strong> (Brampton, ON) — architecting backend systems end-to-end. Previously shipped full-stack features at <strong>RewardsX</strong> (Vancouver) and <strong>Kashcandi Technology Solutions</strong> (India) over 3+ years of professional experience.</p>
-
-          <p>Completed my <span class="c">Post Graduate Certificate in IT Solutions</span> from Humber Polytechnic (Dean's Honours List — all semesters, GPA 3.5/4.0) and a <strong>B.E. in Computer Engineering</strong> from SVIT, Gujarat.</p>
-        </div>
-
-        <div class="term">
-          <div class="term-bar">
-            <div class="td r"></div><div class="td y"></div><div class="td g"></div>
-            <span class="term-title">~ het_shah.json</span>
-          </div>
-          <div class="term-body">
-            <div class="tl"><span class="tp">~/portfolio $</span> cat about.json</div>
-            <div class="tl">{</div>
-            <div class="tl">&nbsp;&nbsp;<span class="tk">"name"</span>:&nbsp;<span class="ts">"Het Shah"</span>,</div>
-            <div class="tl">&nbsp;&nbsp;<span class="tk">"role"</span>:&nbsp;<span class="ts">"Full Stack Engineer"</span>,</div>
-            <div class="tl">&nbsp;&nbsp;<span class="tk">"focus"</span>:&nbsp;<span class="ts">"Backend · APIs · Microservices"</span>,</div>
-            <div class="tl">&nbsp;&nbsp;<span class="tk">"location"</span>:&nbsp;<span class="ts">"Brampton, ON CA"</span>,</div>
-            <div class="tl">&nbsp;&nbsp;<span class="tk">"experience"</span>:&nbsp;<span class="tn">3</span>,</div>
-            <div class="tl">&nbsp;&nbsp;<span class="tk">"openToWork"</span>:&nbsp;<span class="tv">true</span>,</div>
-            <div class="tl">&nbsp;&nbsp;<span class="tk">"stack"</span>:&nbsp;[<span class="ts">"Node.js"</span>,&nbsp;<span class="ts">"PostgreSQL"</span>,&nbsp;<span class="ts">"React"</span>],</div>
-            <div class="tl">&nbsp;&nbsp;<span class="tk">"deansHonours"</span>:&nbsp;<span class="tv">true</span></div>
-            <div class="tl">}</div>
-          </div>
+      <div class="about-left">
+        <h2 class="section-title">Building systems<br/>that <em>scale.</em></h2>
+      </div>
+      <div class="about-right">
+        <p>I'm a <strong>Full Stack Engineer</strong> with a backend-first approach — specializing in Node.js, Express.js, PostgreSQL, MongoDB, and microservices architecture. Currently at <strong>Void Enterprise</strong> in Brampton, ON, architecting backend systems end-to-end.</p>
+        <p>Previously shipped full-stack features at <strong>RewardsX</strong> (Vancouver) and <strong>Kashcandi Technology Solutions</strong> (India). Completed my Post Graduate Certificate from <strong>Humber Polytechnic</strong> (Dean's Honours List — all semesters, GPA 3.5/4.0).</p>
+        <div class="about-tags">
+          <span>Node.js</span><span>PostgreSQL</span><span>React</span>
+          <span>Microservices</span><span>Next.js</span><span>Swagger UI</span>
         </div>
       </div>
-
-      <div class="fade-up">
-        <div class="stats-grid">
-          <div class="stat-box">
-            <div class="stat-num" data-count="3">0</div>
-            <div class="stat-lbl">Years Exp</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-num" data-count="5">0</div>
-            <div class="stat-lbl">Projects</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-num" data-count="3.5">0</div>
-            <div class="stat-lbl">Humber GPA</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-num" data-count="7">0</div>
-            <div class="stat-lbl">Certs</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="skills-wrap">
-    <div class="section-header fade-up">
-      <div class="stag"><span></span>02 — Skills</div>
-      <h2 class="stitle">Tech <span class="ac">Stack</span></h2>
-      <div class="sline"></div>
-    </div>
-
-    <div class="skills-grid">
-      <div class="skill-card fade-up">
-        <div class="skill-icon">⚙️</div>
-        <div class="skill-cat">Backend</div>
-        <div class="tags">
-          <span class="tag">Node.js</span><span class="tag">Express.js</span>
-          <span class="tag">REST APIs</span><span class="tag">Microservices</span>
-          <span class="tag">Swagger UI</span><span class="tag">JWT Auth</span>
-          <span class="tag">FastAPI</span><span class="tag">Laravel</span>
-        </div>
-      </div>
-
-      <div class="skill-card fade-up">
-        <div class="skill-icon">⚛️</div>
-        <div class="skill-cat">Frontend</div>
-        <div class="tags">
-          <span class="tag">React</span><span class="tag">Next.js</span>
-          <span class="tag">TypeScript</span><span class="tag">JavaScript</span>
-          <span class="tag">Tailwind CSS</span><span class="tag">HTML5</span>
-          <span class="tag">CSS3</span><span class="tag">Bootstrap</span>
-        </div>
-      </div>
-
-      <div class="skill-card fade-up">
-        <div class="skill-icon">🗄️</div>
-        <div class="skill-cat">Databases</div>
-        <div class="tags">
-          <span class="tag">PostgreSQL</span><span class="tag">MongoDB</span>
-          <span class="tag">MySQL</span><span class="tag">Firebase Firestore</span>
-        </div>
-      </div>
-
-      <div class="skill-card fade-up">
-        <div class="skill-icon">☁️</div>
-        <div class="skill-cat">Cloud &amp; DevOps</div>
-        <div class="tags">
-          <span class="tag">AWS EC2</span><span class="tag">AWS S3</span>
-          <span class="tag">Docker</span><span class="tag">Vercel</span>
-          <span class="tag">Render</span><span class="tag">Firebase</span>
-          <span class="tag">CI/CD</span><span class="tag">GitHub Actions</span>
-        </div>
-      </div>
-
-      <div class="skill-card fade-up">
-        <div class="skill-icon">📱</div>
-        <div class="skill-cat">Mobile</div>
-        <div class="tags">
-          <span class="tag">Kotlin (Android)</span>
-          <span class="tag">Swift (iOS)</span>
-          <span class="tag">SwiftUI</span>
-          <span class="tag">JavaFX</span>
-        </div>
-      </div>
-
-      <div class="skill-card fade-up">
-        <div class="skill-icon">🛠️</div>
-        <div class="skill-cat">Languages &amp; Tools</div>
-        <div class="tags">
-          <span class="tag">Java</span><span class="tag">Python</span>
-          <span class="tag">SQL</span><span class="tag">Git</span>
-          <span class="tag">Postman</span><span class="tag">GitHub Copilot</span>
-          <span class="tag">VS Code</span><span class="tag">OOP · MVC · SDLC</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="exp-wrap">
-    <div class="section-header fade-up">
-      <div class="stag"><span></span>03 — Experience</div>
-      <h2 class="stitle">Where I've <span class="ac">Worked</span></h2>
-      <div class="sline"></div>
-    </div>
-
-    <div class="exp-timeline">
-
-      <!-- Void Enterprise Full-time -->
-      <article class="exp-item fade-up">
-        <div class="exp-date">
-          Sept 2025 — Present
-          <div class="exp-loc">Remote · Brampton, ON CA</div>
-          <div class="exp-badge">Full-time</div>
-        </div>
-        <div class="exp-content">
-          <div class="exp-company">Void Enterprise</div>
-          <div class="exp-role">// Full Stack Engineer</div>
-          <ul class="exp-bullets">
-            <li>Designed and developed scalable RESTful APIs using <strong>Node.js and Express</strong>, powering core business logic across microservices.</li>
-            <li>Built and maintained <strong>PostgreSQL</strong> databases including schema design, query optimization, and data modeling for production systems.</li>
-            <li>Documented APIs using <strong>Swagger UI</strong>, enabling clear service contracts and improving developer onboarding experience.</li>
-            <li>Architected <strong>microservice-based backend systems</strong> ensuring loose coupling and independent deployability across services.</li>
-            <li>Integrated <strong>Next.js</strong> frontend with backend APIs, owning the full feature lifecycle from database to UI.</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- RewardsX -->
-      <article class="exp-item fade-up">
-        <div class="exp-date">
-          May 2025 — Aug 2025
-          <div class="exp-loc">Remote · Vancouver, BC CA</div>
-          <div class="exp-badge exp-badge-contract">Contract</div>
-        </div>
-        <div class="exp-content">
-          <div class="exp-company">RewardsX</div>
-          <div class="exp-role">// Full Stack Developer</div>
-          <ul class="exp-bullets">
-            <li>Led a team of 3 developers delivering merchant-facing workflows using <strong>React, Next.js, Node.js, TypeScript, and MongoDB</strong>.</li>
-            <li>Designed and implemented scalable <strong>RESTful APIs</strong>, third-party integrations, and backend performance optimizations.</li>
-            <li>Improved application performance through query optimization, API refactoring, and efficient component design.</li>
-            <li>Worked with <strong>Git, Postman, and CI/CD pipelines</strong>, participating in code reviews and production issue resolution.</li>
-            <li>Collaborated cross-functionally in an <strong>Agile/Scrum</strong> environment delivering feature enhancements on schedule.</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- Void Enterprise Intern -->
-      <article class="exp-item fade-up">
-        <div class="exp-date">
-          July 2024 — Feb 2025
-          <div class="exp-loc">Remote · Brampton, ON CA</div>
-          <div class="exp-badge exp-badge-intern">Internship</div>
-        </div>
-        <div class="exp-content">
-          <div class="exp-company">Void Enterprise</div>
-          <div class="exp-role">// Software Engineer Intern</div>
-          <ul class="exp-bullets">
-            <li>Developed backend APIs with <strong>Node.js and Express</strong> as part of an agile team delivering custom software solutions.</li>
-            <li>Worked with <strong>PostgreSQL</strong> to write and optimize queries supporting reliable data persistence across features.</li>
-            <li>Contributed to <strong>microservices architecture</strong>, learning distributed system patterns under senior engineer guidance.</li>
-            <li>Assisted in API documentation using <strong>Swagger UI</strong>, maintaining consistent endpoint specs across the codebase.</li>
-            <li>Collaborated in sprint-based delivery cycles, shipping backend features end-to-end.</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- Kashcandi -->
-      <article class="exp-item fade-up">
-        <div class="exp-date">
-          Feb 2022 — Aug 2023
-          <div class="exp-loc">Gujarat, India 🇮🇳</div>
-          <div class="exp-badge">Full-time</div>
-        </div>
-        <div class="exp-content">
-          <div class="exp-company">Kashcandi Technology Solutions</div>
-          <div class="exp-role">// Software Developer</div>
-          <ul class="exp-bullets">
-            <li>Built and maintained full stack web applications using <strong>React, JavaScript, Node.js, HTML, and CSS</strong>.</li>
-            <li>Built and consumed <strong>RESTful APIs</strong> supporting backend business logic and third-party service integrations.</li>
-            <li>Improved frontend performance through component refactoring and optimized state management.</li>
-            <li>Maintained code quality and testing standards throughout the full SDLC in an Agile environment.</li>
-          </ul>
-        </div>
-      </article>
-
     </div>
   </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-  <div class="proj-wrap">
-    <div class="section-header fade-up">
-      <div class="stag"><span></span>04 — Projects</div>
-      <h2 class="stitle">What I've <span class="ac">Built</span></h2>
-      <div class="sline"></div>
+  <div class="section-inner">
+    <div class="section-label">02 — Projects</div>
+    <h2 class="section-title">Recent <em>Work</em></h2>
+
+    <div class="proj-list">
+
+      <a class="proj-row" href="https://github.com/HetShah24-06/eventhub" target="_blank" rel="noopener">
+        <div class="proj-row-left">
+          <div class="proj-row-num">01</div>
+          <div>
+            <div class="proj-row-name">EventHub Platform</div>
+            <div class="proj-row-desc">Scalable event booking with JWT auth, role-based access, concurrency handling, and image uploads. Microservices architecture deployed on Vercel.</div>
+          </div>
+        </div>
+        <div class="proj-row-right">
+          <div class="proj-row-tags">
+            <span>Next.js</span><span>Node.js</span><span>MongoDB</span><span>JWT</span>
+          </div>
+          <div class="proj-row-arrow">↗</div>
+        </div>
+      </a>
+
+      <a class="proj-row" href="https://yourowntheater.onrender.com/" target="_blank" rel="noopener">
+        <div class="proj-row-left">
+          <div class="proj-row-num">02</div>
+          <div>
+            <div class="proj-row-name">Your Own Theater (YOT)</div>
+            <div class="proj-row-desc">Responsive movie platform with watchlists, favorites, and ratings. SEO-optimized with Next.js SSR, dynamic metadata, and TMDB API integration.</div>
+          </div>
+        </div>
+        <div class="proj-row-right">
+          <div class="proj-row-tags">
+            <span>React</span><span>Next.js</span><span>TypeScript</span><span>MongoDB</span>
+          </div>
+          <div class="proj-row-arrow">↗</div>
+        </div>
+      </a>
+
+      <a class="proj-row" href="https://github.com/HetShah24-06" target="_blank" rel="noopener">
+        <div class="proj-row-left">
+          <div class="proj-row-num">03</div>
+          <div>
+            <div class="proj-row-name">Health Management System</div>
+            <div class="proj-row-desc">Desktop healthcare app in Java + JavaFX. Full patient/appointment CRUD, MVC architecture, binary file persistence, and interactive dashboard with data export.</div>
+          </div>
+        </div>
+        <div class="proj-row-right">
+          <div class="proj-row-tags">
+            <span>Java</span><span>JavaFX</span><span>MVC</span>
+          </div>
+          <div class="proj-row-arrow">↗</div>
+        </div>
+      </a>
+
+      <a class="proj-row" href="https://github.com/HetShah24-06" target="_blank" rel="noopener">
+        <div class="proj-row-left">
+          <div class="proj-row-num">04</div>
+          <div>
+            <div class="proj-row-name">Budget Tracking System</div>
+            <div class="proj-row-desc">Full-featured expense management with role-based auth, analytics dashboard, smart filtering, and PDF/CSV export built on Laravel + MySQL.</div>
+          </div>
+        </div>
+        <div class="proj-row-right">
+          <div class="proj-row-tags">
+            <span>Laravel</span><span>PHP</span><span>MySQL</span>
+          </div>
+          <div class="proj-row-arrow">↗</div>
+        </div>
+      </a>
+
+      <a class="proj-row" href="https://github.com/HetShah24-06" target="_blank" rel="noopener">
+        <div class="proj-row-left">
+          <div class="proj-row-num">05</div>
+          <div>
+            <div class="proj-row-name">Favourite Places Tracker</div>
+            <div class="proj-row-desc">iOS location-based app with Firebase authentication, Google Maps API integration, and map-based UI for saving and exploring favourite places.</div>
+          </div>
+        </div>
+        <div class="proj-row-right">
+          <div class="proj-row-tags">
+            <span>SwiftUI</span><span>Firebase</span><span>Google Maps</span>
+          </div>
+          <div class="proj-row-arrow">↗</div>
+        </div>
+      </a>
+
     </div>
+  </div>
+</section>
 
-    <div class="proj-grid">
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label">03 — Experience</div>
+    <h2 class="section-title">3+ Years of<br/><em>Experience</em></h2>
 
-      <article class="proj-card fade-up">
-        <div class="proj-glow" aria-hidden="true"></div>
-        <div class="proj-num">01 <span class="proj-badge">FEATURED</span></div>
-        <div class="proj-name">EventHub Platform</div>
-        <div class="proj-desc">Scalable event booking platform with JWT authentication, role-based authorization, concurrency handling, and image uploads. Modular microservices-based architecture deployed on Vercel.</div>
-        <div class="proj-stack">
-          <span class="ptag">Next.js</span><span class="ptag">Node.js</span>
-          <span class="ptag">MongoDB</span><span class="ptag">JWT</span><span class="ptag">Vercel</span>
-        </div>
-        <div class="proj-links">
-          <a href="https://github.com/HetShah24-06/eventhub" target="_blank" rel="noopener" class="proj-link">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            GitHub
-          </a>
-        </div>
-      </article>
+    <div class="exp-list">
 
-      <article class="proj-card fade-up">
-        <div class="proj-glow" aria-hidden="true"></div>
-        <div class="proj-num">02 <span class="proj-badge">FEATURED</span></div>
-        <div class="proj-name">Your Own Theater (YOT)</div>
-        <div class="proj-desc">Responsive movie platform with watchlists, favorites, and ratings. SEO-optimized with Next.js SSR, dynamic metadata, and TMDB API integration. Live on Render.</div>
-        <div class="proj-stack">
-          <span class="ptag">React</span><span class="ptag">Next.js</span>
-          <span class="ptag">TypeScript</span><span class="ptag">TMDB API</span><span class="ptag">MongoDB</span>
+      <div class="exp-row">
+        <div class="exp-row-left">
+          <div class="exp-company">Void Enterprise</div>
+          <div class="exp-role">Full Stack Engineer</div>
+          <div class="exp-date">Sept 2025 — Present · Remote, Brampton ON</div>
         </div>
-        <div class="proj-links">
-          <a href="https://yourowntheater.onrender.com/" target="_blank" rel="noopener" class="proj-link">↗ Live Demo</a>
+        <div class="exp-row-right">
+          <ul>
+            <li>Designed and developed scalable RESTful APIs using Node.js and Express, powering core business logic across microservices.</li>
+            <li>Built and maintained PostgreSQL databases including schema design, query optimization, and data modeling.</li>
+            <li>Architected microservice-based backend systems ensuring loose coupling and independent deployability.</li>
+            <li>Documented APIs using Swagger UI, enabling clear service contracts and improving developer onboarding.</li>
+          </ul>
+          <div class="exp-tags"><span>Node.js</span><span>PostgreSQL</span><span>Swagger UI</span><span>Microservices</span><span>Next.js</span></div>
         </div>
-      </article>
+      </div>
 
-      <article class="proj-card fade-up">
-        <div class="proj-glow" aria-hidden="true"></div>
-        <div class="proj-num">03</div>
-        <div class="proj-name">Health Management System</div>
-        <div class="proj-desc">Desktop healthcare app in Java + JavaFX. Full patient/appointment CRUD, MVC architecture, binary file persistence, and an interactive dashboard with data export. Demonstrates strong OOP and backend logic.</div>
-        <div class="proj-stack">
-          <span class="ptag">Java</span><span class="ptag">JavaFX</span>
-          <span class="ptag">MVC</span><span class="ptag">File I/O</span>
+      <div class="exp-row">
+        <div class="exp-row-left">
+          <div class="exp-company">RewardsX</div>
+          <div class="exp-role">Full Stack Developer</div>
+          <div class="exp-date">May 2025 — Aug 2025 · Remote, Vancouver BC</div>
         </div>
-        <div class="proj-links">
-          <a href="https://github.com/HetShah24-06" target="_blank" rel="noopener" class="proj-link">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            GitHub
-          </a>
+        <div class="exp-row-right">
+          <ul>
+            <li>Led a team of 3 developers delivering merchant-facing workflows using React, Next.js, Node.js, TypeScript, and MongoDB.</li>
+            <li>Designed and implemented scalable RESTful APIs, third-party integrations, and backend performance optimizations.</li>
+            <li>Worked with Git, Postman, and CI/CD pipelines, participating in code reviews and production issue resolution.</li>
+          </ul>
+          <div class="exp-tags"><span>React</span><span>Next.js</span><span>Node.js</span><span>TypeScript</span><span>MongoDB</span></div>
         </div>
-      </article>
+      </div>
 
-      <article class="proj-card fade-up">
-        <div class="proj-glow" aria-hidden="true"></div>
-        <div class="proj-num">04</div>
-        <div class="proj-name">Budget Tracking System</div>
-        <div class="proj-desc">Full-featured expense management system with role-based auth, analytics dashboard, smart filtering, and PDF/CSV export functionality built on Laravel + MySQL.</div>
-        <div class="proj-stack">
-          <span class="ptag">Laravel</span><span class="ptag">PHP</span><span class="ptag">MySQL</span>
+      <div class="exp-row">
+        <div class="exp-row-left">
+          <div class="exp-company">Void Enterprise</div>
+          <div class="exp-role">Software Engineer Intern</div>
+          <div class="exp-date">July 2024 — Feb 2025 · Remote, Brampton ON</div>
         </div>
-        <div class="proj-links">
-          <a href="https://github.com/HetShah24-06" target="_blank" rel="noopener" class="proj-link">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            GitHub
-          </a>
+        <div class="exp-row-right">
+          <ul>
+            <li>Developed backend APIs with Node.js and Express as part of an agile team delivering custom software solutions.</li>
+            <li>Worked with PostgreSQL to write and optimize queries supporting reliable data persistence across features.</li>
+            <li>Contributed to microservices architecture, learning distributed system patterns under senior engineer guidance.</li>
+          </ul>
+          <div class="exp-tags"><span>Node.js</span><span>PostgreSQL</span><span>Express.js</span><span>Agile</span></div>
         </div>
-      </article>
+      </div>
 
-      <article class="proj-card fade-up">
-        <div class="proj-glow" aria-hidden="true"></div>
-        <div class="proj-num">05</div>
-        <div class="proj-name">Favourite Places Tracker</div>
-        <div class="proj-desc">iOS location-based app with Firebase authentication, Google Maps API integration, and a map-based UI for saving and exploring favourite places.</div>
-        <div class="proj-stack">
-          <span class="ptag">SwiftUI</span><span class="ptag">Firebase</span><span class="ptag">Google Maps API</span>
+      <div class="exp-row">
+        <div class="exp-row-left">
+          <div class="exp-company">Kashcandi Technology Solutions</div>
+          <div class="exp-role">Software Developer</div>
+          <div class="exp-date">Feb 2022 — Aug 2023 · Gujarat, India</div>
         </div>
-        <div class="proj-links">
-          <a href="https://github.com/HetShah24-06" target="_blank" rel="noopener" class="proj-link">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            GitHub
-          </a>
+        <div class="exp-row-right">
+          <ul>
+            <li>Built and maintained full stack web applications using React, JavaScript, Node.js, HTML, and CSS.</li>
+            <li>Built and consumed RESTful APIs supporting backend business logic and third-party service integrations.</li>
+            <li>Maintained code quality and testing standards throughout the full SDLC in an Agile environment.</li>
+          </ul>
+          <div class="exp-tags"><span>React</span><span>Node.js</span><span>REST APIs</span><span>JavaScript</span></div>
         </div>
-      </article>
+      </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label">04 — Skills</div>
+    <h2 class="section-title">Tech <em>Stack</em></h2>
+
+    <div class="skills-grid">
+      <div class="skill-block">
+        <div class="skill-block-title">Backend</div>
+        <div class="skill-block-tags">
+          <span>Node.js</span><span>Express.js</span><span>REST APIs</span>
+          <span>Microservices</span><span>Swagger UI</span><span>JWT Auth</span>
+          <span>FastAPI</span><span>Laravel</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Frontend</div>
+        <div class="skill-block-tags">
+          <span>React</span><span>Next.js</span><span>TypeScript</span>
+          <span>JavaScript</span><span>Tailwind CSS</span><span>HTML5</span>
+          <span>CSS3</span><span>Bootstrap</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Databases</div>
+        <div class="skill-block-tags">
+          <span>PostgreSQL</span><span>MongoDB</span>
+          <span>MySQL</span><span>Firebase Firestore</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Cloud & DevOps</div>
+        <div class="skill-block-tags">
+          <span>AWS EC2</span><span>AWS S3</span><span>Docker</span>
+          <span>Vercel</span><span>Render</span><span>CI/CD</span>
+          <span>GitHub Actions</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Mobile</div>
+        <div class="skill-block-tags">
+          <span>Kotlin (Android)</span><span>Swift (iOS)</span>
+          <span>SwiftUI</span><span>JavaFX</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Languages & Tools</div>
+        <div class="skill-block-tags">
+          <span>Java</span><span>Python</span><span>SQL</span>
+          <span>Git</span><span>Postman</span><span>GitHub Copilot</span>
+          <span>VS Code</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- EDUCATION -->
 <section id="education">
-  <div class="edu-wrap">
-    <div class="section-header fade-up">
-      <div class="stag"><span></span>05 — Education</div>
-      <h2 class="stitle">Academic <span class="ac">Background</span></h2>
-      <div class="sline"></div>
-    </div>
-
-    <div class="edu-grid fade-up">
-      <div class="edu-card">
-        <div class="edu-flag">🇨🇦</div>
-        <div class="edu-degree">Post Graduate Certificate</div>
-        <div class="edu-field">// Information Technology Solutions</div>
-        <div class="edu-school">Humber Polytechnic</div>
-        <div class="edu-meta">Jan 2024 – Aug 2025 · Toronto, ON</div>
-        <div class="edu-gpa">⭐ GPA 3.50 / 4.0</div>
-        <div class="edu-honours">🏆 Dean's Honours List — All Semesters</div>
+  <div class="section-inner">
+    <div class="section-label">05 — Education</div>
+    <h2 class="section-title">Academic <em>Background</em></h2>
+    <div class="edu-list">
+      <div class="edu-row">
+        <div class="edu-left">
+          <div class="edu-school">Humber Polytechnic</div>
+          <div class="edu-degree">Post Graduate Certificate — Information Technology Solutions</div>
+          <div class="edu-date">Jan 2024 – Aug 2025 · Toronto, ON 🇨🇦</div>
+        </div>
+        <div class="edu-right">
+          <div class="edu-gpa">GPA 3.50 / 4.0</div>
+          <div class="edu-honour">🏆 Dean's Honours List — All Semesters</div>
+        </div>
       </div>
-      <div class="edu-card">
-        <div class="edu-flag">🇮🇳</div>
-        <div class="edu-degree">Bachelor of Engineering</div>
-        <div class="edu-field">// Computer Engineering</div>
-        <div class="edu-school">SVIT — Gujarat Technological University</div>
-        <div class="edu-meta">2019 – 2023 · Gujarat, India</div>
-        <div class="edu-gpa">⭐ CGPA 8.0 / 10</div>
+      <div class="edu-row">
+        <div class="edu-left">
+          <div class="edu-school">SVIT — Gujarat Technological University</div>
+          <div class="edu-degree">Bachelor of Engineering — Computer Engineering</div>
+          <div class="edu-date">2019 – 2023 · Gujarat, India 🇮🇳</div>
+        </div>
+        <div class="edu-right">
+          <div class="edu-gpa">CGPA 8.0 / 10</div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section id="certifications">
-  <div class="certs-wrap">
-    <div class="section-header fade-up">
-      <div class="stag"><span></span>06 — Certifications</div>
-      <h2 class="stitle">My <span class="ac">Credentials</span></h2>
-      <div class="sline"></div>
-    </div>
-
-    <div class="certs-grid">
-      <div class="cert-card fade-up"><div class="cert-icon">🤖</div><div class="cert-body"><div class="cert-name">AI Fundamentals</div><div class="cert-issuer">Microsoft &amp; LinkedIn</div></div></div>
-      <div class="cert-card fade-up"><div class="cert-icon">⚡</div><div class="cert-body"><div class="cert-name">JavaScript Essential Training</div><div class="cert-issuer">LinkedIn Learning</div></div></div>
-      <div class="cert-card fade-up"><div class="cert-icon">⚛️</div><div class="cert-body"><div class="cert-name">React.js Essential Training</div><div class="cert-issuer">LinkedIn Learning</div></div></div>
-      <div class="cert-card fade-up"><div class="cert-icon">🟢</div><div class="cert-body"><div class="cert-name">Node.js Essential Training</div><div class="cert-issuer">LinkedIn Learning</div></div></div>
-      <div class="cert-card fade-up"><div class="cert-icon">🔷</div><div class="cert-body"><div class="cert-name">TypeScript Essential Training</div><div class="cert-issuer">LinkedIn Learning</div></div></div>
-      <div class="cert-card fade-up"><div class="cert-icon">🌐</div><div class="cert-body"><div class="cert-name">REST APIs &amp; Web Services</div><div class="cert-issuer">LinkedIn Learning</div></div></div>
-      <div class="cert-card fade-up"><div class="cert-icon">🐙</div><div class="cert-body"><div class="cert-name">Git &amp; GitHub for Developers</div><div class="cert-issuer">LinkedIn Learning</div></div></div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="contact-wrap">
-    <div class="stag" style="justify-content:center"><span></span>07 — Contact<span></span></div>
-    <div class="contact-big">Let's <span class="c">Connect</span></div>
-    <p class="contact-sub">
-      Actively seeking full-time Software Engineer roles across Canada. Remote, hybrid, or on-site — I'm open. If you have an opportunity or just want to talk tech, I'm always a message away.
-    </p>
+  <div class="section-inner contact-inner">
+    <div class="section-label" style="text-align:center">06 — Contact</div>
+    <h2 class="section-title contact-title">Let's Work<br/><em>Together</em></h2>
+    <p class="contact-sub">Actively seeking full-time Software Engineer roles across Canada. Remote, hybrid, or on-site — I'm open.</p>
 
-    <div class="contact-grid">
+    <div class="contact-cards">
       <a href="mailto:hetshah1324@email.com" class="contact-card">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        hetshah1324@email.com
+        <div class="contact-card-icon">✉</div>
+        <div class="contact-card-label">Email</div>
+        <div class="contact-card-val">hetshah1324@email.com</div>
       </a>
       <a href="tel:+14379553994" class="contact-card">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        +1 437-955-3994
+        <div class="contact-card-icon">📞</div>
+        <div class="contact-card-label">Phone</div>
+        <div class="contact-card-val">+1 437-955-3994</div>
       </a>
       <a href="https://linkedin.com/in/hetshah2406" target="_blank" rel="noopener" class="contact-card">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-        LinkedIn
+        <div class="contact-card-icon">in</div>
+        <div class="contact-card-label">LinkedIn</div>
+        <div class="contact-card-val">hetshah2406</div>
       </a>
       <a href="https://github.com/HetShah24-06" target="_blank" rel="noopener" class="contact-card">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-        GitHub
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        </div>
+        <div class="contact-card-label">GitHub</div>
+        <div class="contact-card-val">HetShah24-06</div>
       </a>
     </div>
 
-    <a href="HET_SHAH_-_FULL_STACK_DEVELOPER.pdf" download class="resume-dl">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Download Resume (PDF)
+    <a href="HET_SHAH_-_FULL_STACK_DEVELOPER.pdf" download class="btn-primary" style="margin-top:2.5rem;display:inline-flex;align-items:center;gap:8px;">
+      ⬇ Download Resume
     </a>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <div class="footer-logo">HS<span class="logo-slash">/</span></div>
-  <span>© 2025 Het Shah — Full Stack Engineer</span>
-  <span>Built with <span class="footer-heart">♥</span> &amp; VS Code · Brampton, ON CA</span>
+  <div class="footer-inner">
+    <span class="footer-logo">Het Shah</span>
+    <span>© 2025 · Full Stack Engineer · Brampton, ON CA</span>
+    <span>Built with ♥ &amp; VS Code</span>
+  </div>
 </footer>
 
-<button id="back-top" aria
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
