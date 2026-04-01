@@ -1,6 +1,6 @@
 /* ============================================================
-   HET SHAH — Clean Minimal Portfolio
-   Inspired by sawad.framer.website
+   HET SHAH —  Portfolio
+  
    Font: Outfit (clean, modern geometric sans)
    ============================================================ */
 
@@ -363,13 +363,7 @@ section:first-of-type { border-top: none; }
   margin-bottom: 1rem;
 }
 .skill-block-tags { display: flex; flex-wrap: wrap; gap: 7px; }
-.skill-block-tags span {
-  font-size: 0.78rem; font-weight: 500; padding: 5px 12px;
-  border-radius: 40px; background: var(--bg);
-  border: 1px solid var(--border); color: var(--gray);
-  transition: border-color var(--trans), color var(--trans);
-}
-.skill-block-tags span:hover { border-color: var(--black); color: var(--black); }
+/* skill-block-tags now use .skill-tag class with logos */
 
 /* ── EDUCATION ── */
 .edu-list { display: flex; flex-direction: column; }
@@ -440,6 +434,47 @@ footer {
 }
 #back-top.visible { opacity: 1; pointer-events: auto; }
 #back-top:hover { transform: translateY(-3px); }
+
+
+/* ── TECH LOGOS ── */
+
+/* Ticker logos */
+.ticker-item {
+  display: inline-flex; align-items: center; gap: 7px;
+  white-space: nowrap;
+}
+.ticker-logo {
+  width: 18px; height: 18px; object-fit: contain;
+  display: inline-block; vertical-align: middle;
+  filter: grayscale(20%);
+}
+.ticker-logo-fallback {
+  font-size: 0.75rem; color: var(--gray-lt);
+}
+
+/* Skill tag logos */
+.skill-tag {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 0.78rem; font-weight: 500; padding: 5px 12px;
+  border-radius: 40px; background: var(--bg);
+  border: 1px solid var(--border); color: var(--gray);
+  transition: border-color var(--trans), color var(--trans);
+  cursor: default;
+}
+.skill-tag:hover { border-color: var(--black); color: var(--black); }
+.skill-logo {
+  width: 16px; height: 16px; object-fit: contain;
+  display: inline-block; flex-shrink: 0;
+}
+.skill-logo-dot {
+  font-size: 0.45rem; color: var(--gray-lt); flex-shrink: 0;
+}
+
+/* About tags with logos */
+.about-tags .skill-tag {
+  background: var(--white);
+  font-size: 0.8rem;
+}
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
