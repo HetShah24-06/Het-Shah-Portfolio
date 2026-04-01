@@ -23,7 +23,7 @@
   function draw() {
     ctx.fillStyle = 'rgba(2,4,8,0.05)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#00ffc8';
+    ctx.fillStyle = '#f59e0b';
     ctx.font = `${FS}px JetBrains Mono`;
     for (let i = 0; i < drops.length; i++) {
       const char = CHARS[Math.floor(Math.random() * CHARS.length)];
