@@ -1,5 +1,6 @@
 /* ============================================================
-   HET SHAH — Portfolio
+   HET SHAH — Clean Minimal Portfolio
+   Inspired by sawad.framer.website
    Font: Outfit (clean, modern geometric sans)
    ============================================================ */
 
@@ -505,10 +506,89 @@ footer {
   font-size: 0.8rem;
 }
 
+
+/* ── HERO TERMINAL ── */
+.hero-terminal {
+  width: clamp(300px, 35vw, 440px);
+  background: #1a1814;
+  border-radius: 16px;
+  border: 1px solid #2e2b24;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.1);
+  overflow: hidden;
+  font-family: var(--mono);
+}
+
+.ht-bar {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px;
+  background: #211e18;
+  border-bottom: 1px solid #2e2b24;
+}
+.ht-dots { display: flex; gap: 7px; }
+.ht-dot {
+  width: 12px; height: 12px; border-radius: 50%;
+}
+.ht-dot.r { background: #ff5f57; }
+.ht-dot.y { background: #ffbd2e; }
+.ht-dot.g { background: #28c840; }
+.ht-title {
+  font-size: 0.72rem; color: #5a5448;
+  letter-spacing: 0.04em; margin-left: 4px;
+}
+
+.ht-body {
+  padding: 1.4rem 1.6rem 1.8rem;
+  display: flex; flex-direction: column; gap: 0;
+  min-height: 280px;
+}
+
+.ht-line {
+  font-size: 0.82rem; line-height: 2;
+  white-space: pre;
+  overflow: hidden;
+}
+.ht-prompt { color: #d47c10; }
+.ht-cmd    { color: #e8dcc8; }
+.ht-key    { color: #7ec8a0; }
+.ht-val    { color: #e8dcc8; }
+.ht-str    { color: #d4a96a; }
+.ht-dim    { color: #4a4540; }
+.ht-amber  { color: #d47c10; }
+.ht-green  { color: #4ade80; }
+.ht-blue   { color: #60a5fa; }
+
+.ht-cursor {
+  display: inline-block;
+  width: 8px; height: 1em;
+  background: #d47c10;
+  vertical-align: text-bottom;
+  animation: ht-blink 1s step-end infinite;
+  margin-left: 2px;
+}
+@keyframes ht-blink {
+  0%,100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+/* Mobile: show terminal below hero text */
+@media(max-width:900px) {
+  .hero-terminal {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    display: block;
+  }
+  .hero-right {
+    display: flex !important;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-right { display: none; }
+  /* hero-right now shows terminal — kept visible */
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
   .about-left .section-title { margin-bottom: 0; font-size: 2rem; }
   .exp-row { grid-template-columns: 1fr; gap: 1rem; }
