@@ -1,6 +1,6 @@
 /* ============================================================
-   HET SHAH —  Portfolio
-  
+   HET SHAH — Portfolio
+   
    Font: Outfit (clean, modern geometric sans)
    ============================================================ */
 
@@ -64,7 +64,8 @@ nav {
 
 .nav-hamburger {
   display: none; flex-direction: column; gap: 5px;
-  background: none; border: none; cursor: pointer; padding: 4px;
+  background: none; border: none; cursor: pointer; padding: 8px;
+  z-index: 101;
 }
 .nav-hamburger span {
   display: block; width: 22px; height: 2px;
@@ -77,15 +78,19 @@ nav {
 
 .nav-drawer {
   position: fixed; top: var(--nav-h); left: 0; right: 0; z-index: 99;
-  background: rgba(245,243,239,0.97); backdrop-filter: blur(20px);
+  background: #f5f3ef;
   display: flex; flex-direction: column;
   padding: 0; max-height: 0; overflow: hidden;
   border-bottom: 1px solid transparent;
-  transition: max-height 0.4s ease, padding 0.3s ease, border-color 0.3s ease;
+  transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1),
+              padding 0.35s ease,
+              border-color 0.3s ease;
+  visibility: hidden;
 }
 .nav-drawer.open {
-  max-height: 480px; padding: 1.5rem 2rem 2rem;
+  max-height: 520px; padding: 1.25rem 1.5rem 1.75rem;
   border-bottom-color: var(--border);
+  visibility: visible;
 }
 .nav-drawer a {
   font-size: 1rem; font-weight: 500; color: var(--gray);
@@ -490,8 +495,8 @@ footer {
 }
 @media(max-width:768px){
   :root { --nav-h: 58px; }
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
+  .nav-links { display: none !important; }
+  .nav-hamburger { display: flex !important; }
   .hero-stats { gap: 1.25rem; }
   .skills-grid { grid-template-columns: 1fr; }
   .contact-cards { grid-template-columns: repeat(2, 1fr); }

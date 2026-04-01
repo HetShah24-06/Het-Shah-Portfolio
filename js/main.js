@@ -4,16 +4,16 @@
 
 /* ── 1. NAV scroll + active + hamburger ── */
 (function initNav() {
-  const nav = document.querySelector('nav');
-  const links = document.querySelectorAll('.nav-links a[href^="#"], .nav-drawer a[href^="#"]');
   const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-links a[href^="#"], .nav-drawer a[href^="#"]');
   const btn = document.getElementById('nav-hamburger');
   const drawer = document.getElementById('nav-drawer');
   const backTop = document.getElementById('back-top');
+  let drawerOpen = false;
 
+  /* Scroll handler */
   window.addEventListener('scroll', () => {
     if (backTop) backTop.classList.toggle('visible', window.scrollY > 400);
-
     let current = '';
     sections.forEach(sec => {
       if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
@@ -23,18 +23,43 @@
     });
   }, { passive: true });
 
+  /* Hamburger toggle */
+  function openDrawer() {
+    drawerOpen = true;
+    drawer.classList.add('open');
+    btn.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    drawerOpen = false;
+    drawer.classList.remove('open');
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
   if (btn && drawer) {
-    btn.addEventListener('click', () => {
-      const open = drawer.classList.toggle('open');
-      btn.classList.toggle('open', open);
-      btn.setAttribute('aria-expanded', open);
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      drawerOpen ? closeDrawer() : openDrawer();
     });
+
+    /* Close when a nav link is clicked */
     drawer.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        drawer.classList.remove('open');
-        btn.classList.remove('open');
-        btn.setAttribute('aria-expanded', false);
-      });
+      a.addEventListener('click', () => closeDrawer());
+    });
+
+    /* Close when clicking outside */
+    document.addEventListener('click', (e) => {
+      if (drawerOpen && !drawer.contains(e.target) && !btn.contains(e.target)) {
+        closeDrawer();
+      }
+    });
+
+    /* Close on Escape key */
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawerOpen) closeDrawer();
     });
   }
 })();
