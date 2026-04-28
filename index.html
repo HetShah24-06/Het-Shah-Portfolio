@@ -9,7 +9,9 @@
   <meta property="og:description" content="Full Stack Engineer. Node.js · PostgreSQL · React · Microservices."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://het-shah-portfolio.vercel.app/"/>
+  <meta property="og:image" content="https://het-shah-portfolio.vercel.app/og-image.png"/>
   <title>Het Shah — Full Stack Engineer</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%231a1a18'/><text y='.9em' font-size='58' font-family='Outfit,sans-serif' font-weight='800' fill='%23f5f3ef' x='50%25' text-anchor='middle' dominant-baseline='hanging' dy='10'>HS</text></svg>"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
@@ -27,7 +29,7 @@
     <a href="#skills">Skills</a>
     <a href="#education">Education</a>
     <a href="#contact">Contact</a>
-    <a href="HET_SHAH_-_FULL_STACK_DEVELOPER.pdf" download class="nav-cta">Download CV</a>
+    <a href="HetShah_Resume.pdf" download class="nav-cta">Download CV</a>
   </div>
   <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-drawer">
     <span></span><span></span><span></span>
@@ -41,7 +43,7 @@
   <a href="#skills">Skills</a>
   <a href="#education">Education</a>
   <a href="#contact">Contact</a>
-  <a href="HET_SHAH_-_FULL_STACK_DEVELOPER.pdf" download>Download CV</a>
+  <a href="HetShah_Resume.pdf" download>Download CV</a>
 </div>
 
 <!-- HERO -->
@@ -88,7 +90,6 @@
           <span class="ht-title">het-shah ~ terminal</span>
         </div>
         <div class="ht-body" id="terminal-body">
-          <!-- Lines injected by JS -->
         </div>
       </div>
     </div>
@@ -132,12 +133,12 @@
 
     <div class="proj-list">
 
-      <a class="proj-row" href="https://github.com/riyachawla-17/EventHub-Web4" target="_blank" rel="noopener">
+      <a class="proj-row" href="https://github.com/HetShah24-06/EventHub-Platform" target="_blank" rel="noopener">
         <div class="proj-row-left">
           <div class="proj-row-num">01</div>
           <div>
             <div class="proj-row-name">EventHub Platform</div>
-            <div class="proj-row-desc">Scalable event booking with JWT auth, role-based access, concurrency handling, and image uploads. Microservices architecture deployed on Vercel.</div>
+            <div class="proj-row-desc">Scalable event booking with JWT/OAuth2 auth, role-based access, OWASP input validation, integration tests, and image uploads. Production-style backend with Swagger documentation.</div>
           </div>
         </div>
         <div class="proj-row-right">
@@ -169,7 +170,7 @@
           <div class="proj-row-num">03</div>
           <div>
             <div class="proj-row-name">Cafe Management System</div>
-            <div class="proj-row-desc">Desktop application built with C# and .NET 8 for full cafe operations — menu CRUD, order cart, receipt printing, and role-based access (Admin/Guest). Secure ADO.NET data layer with parameterized queries and modular WinForms UserControl architecture.</div>
+            <div class="proj-row-desc">Desktop application built with C# and .NET 8 for full cafe operations — menu CRUD, order cart, receipt printing, and role-based access (Admin/Guest). Secure ADO.NET data layer with parameterized queries preventing SQL injection.</div>
           </div>
         </div>
         <div class="proj-row-right">
@@ -196,7 +197,7 @@
         </div>
       </a>
 
-      <div class="proj-row" style="cursor:default">
+      <a class="proj-row" href="https://github.com/HetShah24-06" target="_blank" rel="noopener">
         <div class="proj-row-left">
           <div class="proj-row-num">05</div>
           <div>
@@ -208,8 +209,9 @@
           <div class="proj-row-tags">
             <span>Laravel</span><span>PHP</span><span>MySQL</span>
           </div>
+          <div class="proj-row-arrow">↗</div>
         </div>
-      </div>
+      </a>
 
       <div class="proj-row" style="cursor:default">
         <div class="proj-row-left">
@@ -246,12 +248,13 @@
         </div>
         <div class="exp-row-right">
           <ul>
-            <li>Designed and developed scalable RESTful APIs using Node.js and Express, powering core business logic across microservices.</li>
-            <li>Built and maintained PostgreSQL databases including schema design, query optimization, and data modeling.</li>
-            <li>Architected microservice-based backend systems ensuring loose coupling and independent deployability.</li>
-            <li>Documented APIs using Swagger UI, enabling clear service contracts and improving developer onboarding.</li>
+            <li>Designed and developed scalable RESTful APIs using Node.js (Express / NestJS patterns), powering core business logic across independently deployable microservices.</li>
+            <li>Implemented OAuth 2.0 and JWT-based authentication with role-based authorization across microservice boundaries, following OWASP secure coding standards.</li>
+            <li>Built and maintained PostgreSQL databases including schema design, query optimization, and data modeling; improved query performance by resolving N+1 and slow-scan bottlenecks.</li>
+            <li>Wrote unit and integration tests for backend API endpoints, ensuring reliability and regression coverage across service boundaries.</li>
+            <li>Documented all service APIs using Swagger UI, enabling clear service contracts and accelerating developer onboarding.</li>
           </ul>
-          <div class="exp-tags"><span>Node.js</span><span>PostgreSQL</span><span>Swagger UI</span><span>Microservices</span><span>Next.js</span></div>
+          <div class="exp-tags"><span>Node.js</span><span>NestJS</span><span>PostgreSQL</span><span>OAuth2 / JWT</span><span>Swagger UI</span><span>Docker</span></div>
         </div>
       </div>
 
@@ -263,11 +266,12 @@
         </div>
         <div class="exp-row-right">
           <ul>
-            <li>Led a team of 3 developers delivering merchant-facing workflows using React, Next.js, Node.js, TypeScript, and MongoDB.</li>
-            <li>Designed and implemented scalable RESTful APIs, third-party integrations, and backend performance optimizations.</li>
-            <li>Worked with Git, Postman, and CI/CD pipelines, participating in code reviews and production issue resolution.</li>
+            <li>Led a team of 3 developers delivering full-stack features using React, Next.js, Node.js, TypeScript, MongoDB, and PostgreSQL.</li>
+            <li>Designed and implemented scalable RESTful APIs with third-party integrations; drove backend performance optimization through query refactoring, API response caching, and efficient data modeling.</li>
+            <li>Authored API-level and integration tests using Jest, increasing test coverage and reducing production regressions.</li>
+            <li>Managed CI/CD pipelines via GitHub Actions, participating in code reviews and resolving production issues under time pressure.</li>
           </ul>
-          <div class="exp-tags"><span>React</span><span>Next.js</span><span>Node.js</span><span>TypeScript</span><span>MongoDB</span></div>
+          <div class="exp-tags"><span>React</span><span>Next.js</span><span>Node.js</span><span>TypeScript</span><span>MongoDB</span><span>Jest</span></div>
         </div>
       </div>
 
@@ -279,11 +283,11 @@
         </div>
         <div class="exp-row-right">
           <ul>
-            <li>Developed backend APIs with Node.js and Express as part of an agile team delivering custom software solutions.</li>
-            <li>Worked with PostgreSQL to write and optimize queries supporting reliable data persistence across features.</li>
-            <li>Contributed to microservices architecture, learning distributed system patterns under senior engineer guidance.</li>
+            <li>Developed and maintained backend APIs with Node.js and Express, contributing to microservices architecture and async communication patterns.</li>
+            <li>Optimized PostgreSQL queries and schema structures to support reliable data persistence and improved application performance.</li>
+            <li>Contributed to containerization workflows using Docker, supporting consistent service deployment across environments.</li>
           </ul>
-          <div class="exp-tags"><span>Node.js</span><span>PostgreSQL</span><span>Express.js</span><span>Agile</span></div>
+          <div class="exp-tags"><span>Node.js</span><span>PostgreSQL</span><span>Express.js</span><span>Docker</span><span>Agile</span></div>
         </div>
       </div>
 
@@ -295,7 +299,7 @@
         </div>
         <div class="exp-row-right">
           <ul>
-            <li>Built and maintained full stack web applications using React, JavaScript, Node.js, HTML, and CSS.</li>
+            <li>Built and maintained full-stack web applications using React, JavaScript, Node.js, HTML, and CSS.</li>
             <li>Built and consumed RESTful APIs supporting backend business logic and third-party service integrations.</li>
             <li>Maintained code quality and testing standards throughout the full SDLC in an Agile environment.</li>
           </ul>
@@ -319,6 +323,7 @@
         <div class="skill-block-tags">
           <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" class="skill-logo"/>Node.js</span>
           <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="" class="skill-logo"/>Express.js</span>
+          <span class="skill-tag"><span class="skill-logo-dot">●</span>NestJS</span>
           <span class="skill-tag"><span class="skill-logo-dot">●</span>REST APIs</span>
           <span class="skill-tag"><span class="skill-logo-dot">●</span>Microservices</span>
           <span class="skill-tag"><span class="skill-logo-dot">●</span>Swagger UI</span>
@@ -370,9 +375,9 @@
       <div class="skill-block">
         <div class="skill-block-title">Cloud & DevOps</div>
         <div class="skill-block-tags">
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="" class="skill-logo"/>AWS EC2</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="" class="skill-logo"/>AWS S3</span>
+          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="" class="skill-logo"/>AWS (EC2, S3)</span>
           <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" class="skill-logo"/>Docker</span>
+          <span class="skill-tag"><span class="skill-logo-dot">●</span>Kubernetes</span>
           <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" alt="" class="skill-logo"/>Vercel</span>
           <span class="skill-tag"><span class="skill-logo-dot">●</span>Render</span>
           <span class="skill-tag"><span class="skill-logo-dot">●</span>CI/CD</span>
@@ -471,7 +476,7 @@
       </a>
     </div>
 
-    <a href="HET_SHAH_-_FULL_STACK_DEVELOPER.pdf" download class="btn-primary" style="margin-top:2.5rem;display:inline-flex;align-items:center;gap:8px;">
+    <a href="HetShah_Resume.pdf" download class="btn-primary" style="margin-top:2.5rem;display:inline-flex;align-items:center;gap:8px;">
       ⬇ Download Resume
     </a>
   </div>
