@@ -1,319 +1,341 @@
-/* ============================================================
-   HET SHAH PORTFOLIO — main.js (Clean Minimal)
-   ============================================================ */
+/* Het Shah — portfolio v3
+   1. Inline response blocks for small screens
+   2. Desktop console: "sends" a request and types the response for the section in view
+   3. Motion: name decode, request-flow pulses, scroll reveals, timeline rail,
+      sliding nav pill, cursor spotlight, project tilt
+   4. Mobile menu
+   All motion is skipped when the visitor prefers reduced motion. */
 
-/* ── 1. NAV scroll + active + hamburger ── */
-(function initNav() {
-  const sections = document.querySelectorAll("section[id]");
-  const links = document.querySelectorAll(
-    '.nav-links a[href^="#"], .nav-drawer a[href^="#"]',
-  );
-  const btn = document.getElementById("nav-hamburger");
-  const drawer = document.getElementById("nav-drawer");
-  const backTop = document.getElementById("back-top");
-  let drawerOpen = false;
+(function () {
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+  const root = document.documentElement;
+  if (!reduceMotion) root.classList.add("js-motion");
 
-  /* ── Back to top ── */
-  if (backTop) {
-    backTop.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+  const sections = Array.from(document.querySelectorAll(".sec[data-endpoint]"));
+  const navLinks = Array.from(document.querySelectorAll(".nav a"));
+  const consoleBody = document.getElementById("console-body");
+  const consoleState = document.getElementById("console-state");
+  const sendBtn = document.getElementById("console-send");
+  const responses = {};
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+  /* ── 1. Read each section's response template ── */
+  sections.forEach(function (sec) {
+    const tpl = sec.querySelector("template.resp");
+    if (!tpl) return;
+    const html = tpl.innerHTML.replace(/^\s*\n/, "");
+    responses[sec.id] = html;
+
+    const head = sec.querySelector(".sec-head code");
+    const method = sec.querySelector(".sec-head .m");
+    const label = head
+      ? (method ? method.textContent + " " : "") + head.textContent
+      : "GET /developer";
+
+    const details = document.createElement("details");
+    details.className = "inline-resp";
+    if (sec.id === "hello") details.open = true;
+    details.innerHTML =
+      "<summary>Response for " + label + "</summary><pre>" + html + "</pre>";
+    sec.appendChild(details);
+  });
+
+  /* ── 2. Console: send + type ── */
+  let current = null;
+  let runId = 0;
+
+  function setState(text, cls) {
+    if (!consoleState) return;
+    consoleState.textContent = text;
+    consoleState.className = "console-state" + (cls ? " " + cls : "");
   }
 
-  /* ── Scroll: back-to-top + active nav ── */
-  function onScroll() {
-    if (backTop) {
-      if (window.scrollY > 300) {
-        backTop.classList.add("visible");
-      } else {
-        backTop.classList.remove("visible");
-      }
-    }
-    let current = "";
-    sections.forEach(function (sec) {
-      if (window.scrollY >= sec.offsetTop - 140) current = sec.id;
-    });
-    links.forEach(function (a) {
-      a.classList.toggle("active", a.getAttribute("href") === "#" + current);
-    });
-  }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  // Types HTML character by character while keeping the syntax-colour spans intact.
+  async function typeInto(target, html, id) {
+    const src = document.createElement("div");
+    src.innerHTML = html;
+    let budget = 0;
 
-  /* ── Hamburger ── */
-  function openDrawer() {
-    drawerOpen = true;
-    drawer.classList.add("open");
-    btn.classList.add("open");
-    btn.setAttribute("aria-expanded", "true");
-  }
-
-  function closeDrawer() {
-    drawerOpen = false;
-    drawer.classList.remove("open");
-    btn.classList.remove("open");
-    btn.setAttribute("aria-expanded", "false");
-  }
-
-  if (btn && drawer) {
-    btn.addEventListener("click", function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      if (drawerOpen) {
-        closeDrawer();
-      } else {
-        openDrawer();
-      }
-    });
-
-    drawer.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () {
-        closeDrawer();
-      });
-    });
-
-    document.addEventListener("click", function (e) {
-      if (drawerOpen && !drawer.contains(e.target) && !btn.contains(e.target)) {
-        closeDrawer();
-      }
-    });
-
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && drawerOpen) closeDrawer();
-    });
-  }
-})();
-
-/* ── 2. SCROLL REVEAL ── */
-(function initReveal() {
-  const els = document.querySelectorAll(".reveal");
-  if (!els.length) return;
-
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("revealed");
-          io.unobserve(e.target);
+    async function walk(node, parent) {
+      for (const child of Array.from(node.childNodes)) {
+        if (id !== runId) return;
+        if (child.nodeType === 3) {
+          const text = child.textContent;
+          const tn = document.createTextNode("");
+          parent.appendChild(tn);
+          for (let i = 0; i < text.length; i++) {
+            if (id !== runId) return;
+            tn.textContent += text[i];
+            if (++budget % 4 === 0) await sleep(text[i] === "\n" ? 18 : 6);
+          }
+        } else if (child.nodeType === 1) {
+          const el = child.cloneNode(false);
+          parent.appendChild(el);
+          await walk(child, el);
         }
+      }
+    }
+    await walk(src, target);
+  }
+
+  async function send(id) {
+    if (!consoleBody || !responses[id]) return;
+    const my = ++runId;
+
+    if (reduceMotion) {
+      consoleBody.innerHTML = responses[id];
+      setState("200 OK", "ok");
+      return;
+    }
+
+    const html = responses[id];
+    const split = html.indexOf("\n\n"); // request line(s) | response
+    const request = split > -1 ? html.slice(0, split) : "";
+    const response = split > -1 ? html.slice(split + 2) : html;
+
+    consoleBody.innerHTML = "";
+    consoleBody.scrollTop = 0;
+    setState("Sending request…", "sending");
+    await typeInto(consoleBody, request, my);
+    if (my !== runId) return;
+    consoleBody.insertAdjacentHTML(
+      "beforeend",
+      '\n<span class="c-dim">…</span>',
+    );
+    await sleep(380);
+    if (my !== runId) return;
+    consoleBody.lastChild && consoleBody.removeChild(consoleBody.lastChild);
+    consoleBody.insertAdjacentHTML("beforeend", "\n");
+    setState("200 OK", "ok");
+    await typeInto(consoleBody, response, my);
+    if (my !== runId) return;
+    consoleBody.insertAdjacentHTML(
+      "beforeend",
+      '\n<span class="caret" aria-hidden="true"></span>',
+    );
+  }
+
+  function swapTo(id) {
+    if (id === current) return;
+    current = id;
+    send(id);
+  }
+  if (sendBtn)
+    sendBtn.addEventListener("click", function () {
+      send(current || "hello");
+    });
+
+  /* ── 3a. Active section + nav pill ── */
+  const pill = document.querySelector(".nav-pill");
+  function movePill(link) {
+    if (!pill || !link) return;
+    pill.style.setProperty("--pill-y", link.offsetTop + "px");
+    pill.style.height = link.offsetHeight + "px";
+    pill.classList.add("on");
+  }
+
+  function setActive(id) {
+    navLinks.forEach(function (a) {
+      const on = a.getAttribute("href") === "#" + id;
+      a.classList.toggle("active", on);
+      if (on) {
+        a.setAttribute("aria-current", "location");
+        movePill(a);
+      } else a.removeAttribute("aria-current");
+    });
+    swapTo(id);
+  }
+
+  /* ── 3b. Timeline rail ── */
+  const timeline = document.querySelector(".timeline");
+  const jobs = Array.from(document.querySelectorAll(".job"));
+  function updateTimeline() {
+    if (!timeline) return;
+    const r = timeline.getBoundingClientRect();
+    const line = window.innerHeight * 0.6;
+    const p = Math.min(1, Math.max(0, (line - r.top) / r.height));
+    timeline.style.setProperty("--tl", reduceMotion ? 1 : p.toFixed(3));
+    jobs.forEach(function (j) {
+      j.classList.toggle(
+        "lit",
+        j.getBoundingClientRect().top + 30 < line || reduceMotion,
+      );
+    });
+  }
+
+  function onScroll() {
+    const probe = window.innerHeight * 0.35;
+    let id = sections[0].id;
+    for (const sec of sections)
+      if (sec.getBoundingClientRect().top - probe <= 0) id = sec.id;
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4)
+      id = sections[sections.length - 1].id;
+    setActive(id);
+    updateTimeline();
+  }
+  let ticking = false;
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        onScroll();
+        ticking = false;
       });
     },
-    { threshold: 0.05, rootMargin: "0px 0px -40px 0px" },
+    { passive: true },
   );
+  window.addEventListener("resize", onScroll);
 
-  els.forEach((el) => io.observe(el));
-})();
-
-/* ── 3. HERO ENTRANCE ── */
-window.addEventListener("load", () => {
-  const items = [
-    ".hero-avail",
-    ".hero-heading",
-    ".hero-desc",
-    ".hero-actions",
-    ".hero-stats",
-    ".hero-right",
-  ];
-  items.forEach((sel, i) => {
-    const el = document.querySelector(sel);
-    if (!el) return;
-    el.style.opacity = "0";
-    el.style.transform = "translateY(20px)";
-    el.style.transition = `opacity 0.7s ease ${i * 0.1}s, transform 0.7s ease ${i * 0.1}s`;
-    setTimeout(() => {
-      el.style.opacity = "1";
-      el.style.transform = "translateY(0)";
-    }, 60);
-  });
-});
-
-/* ── 4. SMOOTH SCROLL ── */
-document.querySelectorAll('a[href^="#"]').forEach((a) => {
-  a.addEventListener("click", (e) => {
-    const target = document.querySelector(a.getAttribute("href"));
-    if (!target) return;
-    e.preventDefault();
-    const navH =
-      parseInt(
-        getComputedStyle(document.documentElement).getPropertyValue("--nav-h"),
-      ) || 68;
-    const top = target.getBoundingClientRect().top + window.scrollY - navH;
-    window.scrollTo({ top, behavior: "smooth" });
-  });
-});
-
-/* ── HERO TERMINAL ANIMATION ── */
-(function initTerminal() {
-  const body = document.getElementById("terminal-body");
-  if (!body) return;
-
-  const lines = [
-    { type: "prompt", text: "~/het-shah $ ", cmd: "whoami" },
-    {
-      type: "output",
-      parts: [
-        { cls: "ht-key", t: "name" },
-        { cls: "ht-dim", t: "       → " },
-        { cls: "ht-str", t: '"Het Shah"' },
-      ],
-    },
-    {
-      type: "output",
-      parts: [
-        { cls: "ht-key", t: "role" },
-        { cls: "ht-dim", t: "       → " },
-        { cls: "ht-str", t: '"Full Stack Developer"' },
-      ],
-    },
-    {
-      type: "output",
-      parts: [
-        { cls: "ht-key", t: "location" },
-        { cls: "ht-dim", t: "   → " },
-        { cls: "ht-str", t: '"Greater Toronto Area 🇨🇦"' },
-      ],
-    },
-    { type: "blank" },
-    { type: "prompt", text: "~/het-shah $ ", cmd: "cat stack.json" },
-    { type: "output", parts: [{ cls: "ht-dim", t: "{" }] },
-    {
-      type: "output",
-      parts: [
-        { cls: "ht-dim", t: "  " },
-        { cls: "ht-key", t: "backend" },
-        { cls: "ht-dim", t: ":  " },
-        { cls: "ht-amber", t: '["Node.js", "Express"]' },
-      ],
-    },
-    {
-      type: "output",
-      parts: [
-        { cls: "ht-dim", t: "  " },
-        { cls: "ht-key", t: "frontend" },
-        { cls: "ht-dim", t: ": " },
-        { cls: "ht-amber", t: '["React", "Next.js"]' },
-      ],
-    },
-    {
-      type: "output",
-      parts: [
-        { cls: "ht-dim", t: "  " },
-        { cls: "ht-key", t: "data" },
-        { cls: "ht-dim", t: ":     " },
-        { cls: "ht-amber", t: '["PostgreSQL", "MongoDB"]' },
-      ],
-    },
-    { type: "output", parts: [{ cls: "ht-dim", t: "}" }] },
-    { type: "blank" },
-    { type: "prompt", text: "~/het-shah $ ", cmd: "status --check" },
-    {
-      type: "output",
-      parts: [
-        { cls: "ht-green", t: "✓ " },
-        { cls: "ht-val", t: "Open to Work" },
-      ],
-    },
-    {
-      type: "output",
-      parts: [
-        { cls: "ht-green", t: "✓ " },
-        { cls: "ht-val", t: "Dean's Honours List" },
-      ],
-    },
-    {
-      type: "output",
-      parts: [
-        { cls: "ht-green", t: "✓ " },
-        { cls: "ht-val", t: "Interview Master — live on Vercel" },
-      ],
-    },
-    { type: "blank" },
-    { type: "cursor" },
-  ];
-
-  let lineIndex = 0;
-
-  function makeLine(line) {
-    const div = document.createElement("div");
-    div.className = "ht-line";
-    return div;
+  /* ── 3c. Name decode ── */
+  const decodeEl = document.querySelector(".decode");
+  function decode() {
+    if (!decodeEl || reduceMotion) return;
+    const final = decodeEl.dataset.text;
+    const glyphs = "{}[]<>/=*#$_01";
+    decodeEl.setAttribute("aria-label", final);
+    decodeEl.innerHTML = final
+      .split("")
+      .map(function (c) {
+        return c === " "
+          ? " "
+          : '<span class="ch scr" aria-hidden="true">' + c + "</span>";
+      })
+      .join("");
+    const spans = Array.from(decodeEl.querySelectorAll(".ch"));
+    const letters = final.replace(/ /g, "").split("");
+    let frame = 0;
+    (function tick() {
+      frame++;
+      spans.forEach(function (s, i) {
+        if (frame > 8 + i * 3) {
+          s.textContent = letters[i];
+          s.classList.remove("scr");
+        } else
+          s.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
+      });
+      if (frame <= 8 + spans.length * 3) setTimeout(tick, 38);
+    })();
   }
 
-  function typeText(el, text, speed, cb) {
-    let i = 0;
-    function next() {
-      if (i < text.length) {
-        el.textContent += text[i++];
-        setTimeout(next, speed + Math.random() * 30);
-      } else if (cb) cb();
-    }
-    next();
-  }
-
-  function renderOutputLine(line, cb) {
-    const div = makeLine(line);
-    body.appendChild(div);
-    line.parts.forEach((p) => {
-      const span = document.createElement("span");
-      span.className = p.cls;
-      span.textContent = p.t;
-      div.appendChild(span);
+  /* ── 3d. Request flow: light up each node as the packet arrives ── */
+  const nodes = document.querySelectorAll(".flow-node");
+  function flowCycle() {
+    if (!nodes.length || reduceMotion) return;
+    // arrival times (ms) matched to the CSS keyframes (4s loop)
+    [
+      [0, 0],
+      [600, 1],
+      [1300, 2],
+      [2200, 1],
+      [2900, 0],
+    ].forEach(function (step) {
+      setTimeout(function () {
+        const n = nodes[step[1]];
+        n.classList.add("hit");
+        setTimeout(function () {
+          n.classList.remove("hit");
+        }, 420);
+      }, step[0]);
     });
-    setTimeout(cb, 60);
   }
 
-  function renderPromptLine(line, cb) {
-    const div = makeLine(line);
-    body.appendChild(div);
-
-    const promptSpan = document.createElement("span");
-    promptSpan.className = "ht-prompt";
-    promptSpan.textContent = line.text;
-    div.appendChild(promptSpan);
-
-    const cmdSpan = document.createElement("span");
-    cmdSpan.className = "ht-cmd";
-    div.appendChild(cmdSpan);
-
-    typeText(cmdSpan, line.cmd, 55, () => setTimeout(cb, 180));
+  /* ── 3e. Scroll reveals ── */
+  function setupReveal() {
+    if (reduceMotion || !("IntersectionObserver" in window)) return;
+    const groups = [
+      ".sec:not(.hello) .sec-head",
+      ".sec:not(.hello) > p",
+      ".job",
+      ".proj",
+      ".skills tr",
+      ".edu",
+      ".contact-list li",
+      ".facts > div",
+      ".flow",
+      ".cert",
+    ];
+    const els = document.querySelectorAll(groups.join(","));
+    els.forEach(function (el) {
+      el.classList.add("rv");
+      const sibs = Array.from(el.parentElement.children).filter(function (c) {
+        return c.tagName === el.tagName;
+      });
+      el.style.setProperty("--d", Math.min(sibs.indexOf(el), 6) * 0.07 + "s");
+    });
+    const io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add("in");
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
+    );
+    els.forEach(function (el) {
+      io.observe(el);
+    });
   }
 
-  function renderCursor() {
-    const div = makeLine({ type: "cursor" });
-    body.appendChild(div);
+  /* ── 3f. Cursor spotlight + project tilt (pointer devices only) ── */
+  function setupPointer() {
+    if (reduceMotion || !window.matchMedia("(hover: hover)").matches) return;
+    window.addEventListener(
+      "pointermove",
+      function (e) {
+        root.style.setProperty("--mx", e.clientX + "px");
+        root.style.setProperty("--my", e.clientY + "px");
+      },
+      { passive: true },
+    );
 
-    const promptSpan = document.createElement("span");
-    promptSpan.className = "ht-prompt";
-    promptSpan.textContent = "~/het-shah $ ";
-    div.appendChild(promptSpan);
-
-    const cursor = document.createElement("span");
-    cursor.className = "ht-cursor";
-    div.appendChild(cursor);
+    document.querySelectorAll("a.proj-img").forEach(function (card) {
+      card.addEventListener("pointermove", function (e) {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.setProperty("--ry", (x * 6).toFixed(2) + "deg");
+        card.style.setProperty("--rx", (-y * 6).toFixed(2) + "deg");
+      });
+      card.addEventListener("pointerleave", function () {
+        card.style.setProperty("--ry", "0deg");
+        card.style.setProperty("--rx", "0deg");
+      });
+    });
   }
 
-  function renderBlank(cb) {
-    const div = document.createElement("div");
-    div.style.height = "0.4rem";
-    body.appendChild(div);
-    setTimeout(cb, 60);
+  /* ── 4. Mobile menu ── */
+  const menuBtn = document.getElementById("menu-btn");
+  const nav = document.getElementById("nav");
+  if (menuBtn && nav) {
+    menuBtn.addEventListener("click", function () {
+      const open = nav.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", String(open));
+      menuBtn.textContent = open ? "Close" : "Menu";
+      if (open)
+        requestAnimationFrame(function () {
+          movePill(document.querySelector(".nav a.active"));
+        });
+    });
+    navLinks.forEach(function (a) {
+      a.addEventListener("click", function () {
+        nav.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.textContent = "Menu";
+      });
+    });
   }
 
-  function renderNext() {
-    if (lineIndex >= lines.length) return;
-    const line = lines[lineIndex++];
-
-    if (line.type === "blank") {
-      renderBlank(renderNext);
-    } else if (line.type === "prompt") {
-      renderPromptLine(line, renderNext);
-    } else if (line.type === "output") {
-      renderOutputLine(line, renderNext);
-    } else if (line.type === "cursor") {
-      renderCursor();
-    }
-  }
-
-  // Start after hero entrance animation settles
-  setTimeout(renderNext, 900);
+  /* ── Start ── */
+  decode();
+  setupReveal();
+  setupPointer();
+  flowCycle();
+  if (!reduceMotion) setInterval(flowCycle, 4000);
+  onScroll();
 })();

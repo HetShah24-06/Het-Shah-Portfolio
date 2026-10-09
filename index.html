@@ -3,486 +3,401 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Het Shah — Backend-focused Full Stack Developer. Node.js, Express, React, Next.js, PostgreSQL, MongoDB. Based in the Greater Toronto Area, Canada."/>
+  <title>Het Shah — Full Stack Developer</title>
+  <meta name="description" content="Het Shah, backend-focused full stack developer in the Greater Toronto Area. Node.js, Express, React, Next.js, PostgreSQL, MongoDB."/>
   <meta name="author" content="Het Shah"/>
   <meta property="og:title" content="Het Shah — Full Stack Developer"/>
-  <meta property="og:description" content="Backend-focused Full Stack Developer. Node.js · React · Next.js · PostgreSQL · MongoDB."/>
+  <meta property="og:description" content="Backend-focused full stack developer. Node.js, React, Next.js, PostgreSQL, MongoDB."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://het-shah-portfolio.vercel.app/"/>
   <meta property="og:image" content="https://het-shah-portfolio.vercel.app/og-image.png"/>
-  <title>Het Shah — Full Stack Developer</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%231a1a18'/><text y='.9em' font-size='58' font-family='Outfit,sans-serif' font-weight='800' fill='%23f5f3ef' x='50%25' text-anchor='middle' dominant-baseline='hanging' dy='10'>HS</text></svg>"/>
+  <meta name="theme-color" content="#F6F6FA"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23141733'/><text x='50' y='64' font-size='44' font-family='monospace' font-weight='700' fill='%2343D9C3' text-anchor='middle'>{h}</text></svg>"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<!-- NAV -->
-<nav>
-  <a href="#hero" class="nav-logo">Het Shah</a>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-    <a href="HetShah_Resume.pdf" download class="nav-cta">Download CV</a>
-  </div>
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-drawer">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+<div class="shell">
 
-<div class="nav-drawer" id="nav-drawer">
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#experience">Experience</a>
-  <a href="#skills">Skills</a>
-  <a href="#education">Education</a>
-  <a href="#contact">Contact</a>
-  <a href="HetShah_Resume.pdf" download>Download CV</a>
-</div>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-inner">
-    <div class="hero-left">
-      <div class="hero-avail">
-        <span class="avail-dot"></span> Available for work
-      </div>
-      <h1 class="hero-heading">FULL STACK<br/><span class="hero-outline">DEVELOPER</span></h1>
-      <p class="hero-desc">
-        Backend-focused developer building secure REST APIs and web apps with Node.js, React, Next.js, PostgreSQL &amp; MongoDB.
-      </p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="#contact" class="btn-ghost">Get In Touch</a>
-      </div>
-      <div class="hero-stats">
-        <div class="hstat">
-          <div class="hstat-num">5</div>
-          <div class="hstat-lbl">Dev Roles &amp;<br/>Internships</div>
-        </div>
-        <div class="hstat-div"></div>
-        <div class="hstat">
-          <div class="hstat-num">6+</div>
-          <div class="hstat-lbl">Projects<br/>Completed</div>
-        </div>
-        <div class="hstat-div"></div>
-        <div class="hstat">
-          <div class="hstat-num">3.5</div>
-          <div class="hstat-lbl">Humber<br/>GPA</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-right">
-      <div class="hero-terminal">
-        <div class="ht-bar">
-          <div class="ht-dots">
-            <span class="ht-dot r"></span>
-            <span class="ht-dot y"></span>
-            <span class="ht-dot g"></span>
-          </div>
-          <span class="ht-title">het-shah ~ terminal</span>
-        </div>
-        <div class="ht-body" id="terminal-body">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TICKER -->
-<div class="ticker-wrap">
-  <div class="ticker-track">
-    <span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="ticker-logo"/>Node.js</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" class="ticker-logo"/>Express.js</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="ticker-logo"/>React</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="ticker-logo"/>Next.js</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="ticker-logo"/>PostgreSQL</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="ticker-logo"/>MongoDB</span><span class="ticker-dot">✦</span><span class="ticker-item"><span class="ticker-logo-fallback">⚡</span>REST APIs</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="ticker-logo"/>TypeScript</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="ticker-logo"/>JavaScript</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" alt="Jest" class="ticker-logo"/>Jest</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="ticker-logo"/>Docker</span><span class="ticker-dot">✦</span><span class="ticker-item"><span class="ticker-logo-fallback">⚡</span>Swagger</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="ticker-logo"/>Java</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="ticker-logo"/>C#</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET" class="ticker-logo"/>.NET</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift" class="ticker-logo"/>Swift</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="ticker-logo"/>Git</span><span class="ticker-dot">✦</span>
-    <!-- Duplicate for seamless loop -->
-    <span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="ticker-logo"/>Node.js</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" class="ticker-logo"/>Express.js</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="ticker-logo"/>React</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="ticker-logo"/>Next.js</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="ticker-logo"/>PostgreSQL</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="ticker-logo"/>MongoDB</span><span class="ticker-dot">✦</span><span class="ticker-item"><span class="ticker-logo-fallback">⚡</span>REST APIs</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="ticker-logo"/>TypeScript</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="ticker-logo"/>JavaScript</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" alt="Jest" class="ticker-logo"/>Jest</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="ticker-logo"/>Docker</span><span class="ticker-dot">✦</span><span class="ticker-item"><span class="ticker-logo-fallback">⚡</span>Swagger</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="ticker-logo"/>Java</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="ticker-logo"/>C#</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET" class="ticker-logo"/>.NET</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift" class="ticker-logo"/>Swift</span><span class="ticker-dot">✦</span><span class="ticker-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="ticker-logo"/>Git</span><span class="ticker-dot">✦</span>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-inner">
-    <div class="section-label">01 — About Me</div>
-    <div class="about-grid">
-      <div class="about-left">
-        <h2 class="section-title">Backend-first,<br/>full stack <em>ready.</em></h2>
-      </div>
-      <div class="about-right">
-        <p>I'm a <strong>backend-focused Full Stack Developer</strong> based in the Greater Toronto Area. I build secure REST APIs with Node.js and Express, design data models in PostgreSQL and MongoDB, and build responsive front ends with React and Next.js.</p>
-        <p>Since September 2025 I've worked remotely as a <strong>Backend &amp; Web Developer (Consultant)</strong> at <strong>Void Enterprise</strong>, after completing a developer internship there. At <strong>Humber Polytechnic</strong> I led a three-person Agile team on <strong>RewardsX</strong>, a capstone project for Credits Financial Inc., and finished my Postgraduate Certificate on the Dean's Honours List (GPA 3.5/4.0).</p>
-        <p>My strongest personal project is <strong>Interview Master</strong>, a live AI interview-prep platform built with Node.js, React, MongoDB and the Gemini API.</p>
-        <div class="about-tags">
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" class="skill-logo"/>Node.js</span><span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="" class="skill-logo"/>Express.js</span><span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" class="skill-logo"/>React</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="" class="skill-logo"/>Next.js</span><span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="" class="skill-logo"/>PostgreSQL</span><span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="" class="skill-logo"/>MongoDB</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="section-inner">
-    <div class="section-label">02 — Projects</div>
-    <h2 class="section-title">Selected <em>Projects</em></h2>
-
-    <div class="proj-list">
-      <article class="proj-featured">
-        <a class="proj-media" href="https://interview-master-ebon.vercel.app" target="_blank" rel="noopener" aria-label="Open Interview Master live demo">
-          <img src="assets/projects/interview-master.jpg" alt="Interview Master project preview" loading="lazy" width="1200" height="627"/>
-        </a>
-        <div class="proj-body">
-          <div class="proj-kicker">Featured · Personal project · Live</div>
-          <h3 class="proj-name">Interview Master — AI Interview Prep</h3>
-          <p class="proj-desc">Paste a job description and resume, and get a match score, technical and behavioural questions with model answers, a skill-gap analysis, a day-by-day prep plan, and a tailored ATS-friendly resume PDF.</p>
-          <ul class="proj-points">
-            <li>Zod schemas keep the Gemini API's output structured and valid</li>
-            <li>JWT in httpOnly cookies, CSRF tokens, rate limiting, server-side logout</li>
-            <li>Tested with Jest + Supertest; Docker on Render, frontend on Vercel</li>
-          </ul>
-          <div class="proj-tags"><span>Node.js</span><span>Express</span><span>MongoDB</span><span>React</span><span>Gemini API</span><span>Docker</span></div>
-          <div class="proj-links"><a class="proj-link primary" href="https://interview-master-ebon.vercel.app" target="_blank" rel="noopener">Live demo ↗</a><a class="proj-link" href="https://github.com/HetShah24-06/ai-interview-prep" target="_blank" rel="noopener">Source code ↗</a></div>
-        </div>
-      </article>
-      <div class="proj-grid">
-      <article class="proj-card">
-        <a class="proj-media" href="https://yourowntheater.onrender.com/" target="_blank" rel="noopener" aria-label="Open Your Own Theater"><img src="assets/projects/your-own-theater.jpg" alt="Your Own Theater project preview" loading="lazy" width="1200" height="627"/></a>
-        <div class="proj-body">
-          <div class="proj-kicker">Capstone · Team lead of 4</div>
-          <h3 class="proj-name">Your Own Theater</h3>
-          <p class="proj-desc">Movie web app with watchlists, favourites, and ratings, using TMDB authentication and data.</p>
-          <div class="proj-tags"><span>JavaScript</span><span>HTML</span><span>CSS</span><span>TMDB API</span></div>
-          <div class="proj-links"><a class="proj-link primary" href="https://yourowntheater.onrender.com/" target="_blank" rel="noopener">Live demo ↗</a><a class="proj-link" href="https://github.com/HetShah24-06/YourOwnTheater" target="_blank" rel="noopener">Source code ↗</a></div>
-        </div>
-      </article>
-      <article class="proj-card">
-        <a class="proj-media" href="https://github.com/HetShah24-06/Healthcare_app" target="_blank" rel="noopener" aria-label="Open Healthcare Appointment System"><img src="assets/projects/healthcare.jpg" alt="Healthcare Appointment System project preview" loading="lazy" width="1200" height="627"/></a>
-        <div class="proj-body">
-          <div class="proj-kicker">Course project · Desktop</div>
-          <h3 class="proj-name">Healthcare Appointment System</h3>
-          <p class="proj-desc">JavaFX app for patients and appointments with full CRUD, export, and an embedded SQLite database.</p>
-          <div class="proj-tags"><span>Java 21</span><span>JavaFX</span><span>SQLite</span><span>JDBC</span></div>
-          <div class="proj-links"><a class="proj-link" href="https://github.com/HetShah24-06/Healthcare_app" target="_blank" rel="noopener">Source code ↗</a></div>
-        </div>
-      </article>
-      <article class="proj-card">
-        <div class="proj-media"><img src="assets/projects/bookyourway.jpg" alt="BookYourWay project preview" loading="lazy" width="1200" height="627"/></div>
-        <div class="proj-body">
-          <div class="proj-kicker">Course project · Android · Team of 4</div>
-          <h3 class="proj-name">BookYourWay</h3>
-          <p class="proj-desc">Flight booking with Firebase Auth and Google Sign-In, seat selection with live pricing, and PDF e-tickets.</p>
-          <div class="proj-tags"><span>Java</span><span>Android SDK</span><span>Firebase</span></div>
-          <div class="proj-links"><span class="proj-link muted">Code available on request</span></div>
-        </div>
-      </article>
-      <article class="proj-card">
-        <a class="proj-media" href="https://github.com/HetShah24-06/IOS_PROJECT_HET" target="_blank" rel="noopener" aria-label="Open MovieExplorer"><img src="assets/projects/movieexplorer.jpg" alt="MovieExplorer project preview" loading="lazy" width="1200" height="627"/></a>
-        <div class="proj-body">
-          <div class="proj-kicker">Course project · iOS</div>
-          <h3 class="proj-name">MovieExplorer</h3>
-          <p class="proj-desc">Browse, search, and watch trailers via the TMDb API, with Core Data caching for offline use.</p>
-          <div class="proj-tags"><span>Swift</span><span>UIKit</span><span>Core Data</span></div>
-          <div class="proj-links"><a class="proj-link" href="https://github.com/HetShah24-06/IOS_PROJECT_HET" target="_blank" rel="noopener">Source code ↗</a></div>
-        </div>
-      </article>
-      <article class="proj-card">
-        <a class="proj-media" href="https://github.com/HetShah24-06/cafe-management-dotnet" target="_blank" rel="noopener" aria-label="Open Cafe Management System"><img src="assets/projects/cafe-management.jpg" alt="Cafe Management System project preview" loading="lazy" width="1200" height="627"/></a>
-        <div class="proj-body">
-          <div class="proj-kicker">Desktop application</div>
-          <h3 class="proj-name">Cafe Management System</h3>
-          <p class="proj-desc">Menus, orders, and billing with role-based access and a SQL Server data layer via ADO.NET.</p>
-          <div class="proj-tags"><span>C#</span><span>.NET 8</span><span>WinForms</span><span>SQL Server</span></div>
-          <div class="proj-links"><a class="proj-link" href="https://github.com/HetShah24-06/cafe-management-dotnet" target="_blank" rel="noopener">Source code ↗</a></div>
-        </div>
-      </article>
-      <article class="proj-card">
-        <a class="proj-media" href="https://github.com/HetShah24-06/Het-Shah-Portfolio" target="_blank" rel="noopener" aria-label="Open Developer Portfolio"><img src="assets/projects/portfolio.jpg" alt="Developer Portfolio project preview" loading="lazy" width="1200" height="627"/></a>
-        <div class="proj-body">
-          <div class="proj-kicker">Personal website · Live</div>
-          <h3 class="proj-name">Developer Portfolio</h3>
-          <p class="proj-desc">This site: a responsive, dependency-free portfolio in HTML, CSS, and vanilla JavaScript with an animated terminal hero, deployed on Vercel.</p>
-          <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Vercel</span></div>
-          <div class="proj-links"><a class="proj-link" href="https://github.com/HetShah24-06/Het-Shah-Portfolio" target="_blank" rel="noopener">Source code ↗</a></div>
-        </div>
-      </article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="section-inner">
-    <div class="section-label">03 — Experience</div>
-    <h2 class="section-title">Where I've<br/><em>Worked</em></h2>
-
-    <div class="exp-list">
-
-      <div class="exp-row">
-        <div class="exp-row-left">
-          <div class="exp-company">Void Enterprise</div>
-          <div class="exp-role">Backend &amp; Web Developer (Consultant)</div>
-          <div class="exp-date">Sept 2025 — Present · Remote, Greater Toronto Area</div>
-        </div>
-        <div class="exp-row-right">
-          <ul>
-            <li>Build and maintain backend services and REST APIs with Node.js and JavaScript.</li>
-            <li>Develop web application features and pages using React and Next.js.</li>
-            <li>Design MongoDB data models and write queries to support application features.</li>
-            <li>Collaborate remotely using Git-based workflows and async communication; debug, test, and document work for clients and teammates.</li>
-          </ul>
-          <div class="exp-tags"><span>Node.js</span><span>JavaScript</span><span>React</span><span>Next.js</span><span>MongoDB</span></div>
-        </div>
-      </div>
-
-      <div class="exp-row">
-        <div class="exp-row-left">
-          <div class="exp-company">RewardsX — Capstone Project</div>
-          <div class="exp-role">Full Stack Developer &amp; Team Lead</div>
-          <div class="exp-date">May 2025 — Aug 2025 · Credits Financial Inc. × Humber Polytechnic</div>
-        </div>
-        <div class="exp-row-right">
-          <ul>
-            <li>Led a 3-person Agile team ("Agile ACEs") through sprint planning, task assignment, and code reviews.</li>
-            <li>Developed full-stack features with Node.js on the backend and React on the front end.</li>
-            <li>Designed the backend architecture and PostgreSQL database schema.</li>
-            <li>Integrated Google Places, Yelp, Mapbox, and OpenStreetMap APIs, and documented REST endpoints with Swagger UI.</li>
-          </ul>
-          <div class="exp-tags"><span>Node.js</span><span>React</span><span>PostgreSQL</span><span>Swagger UI</span><span>Agile</span></div>
-        </div>
-      </div>
-
-      <div class="exp-row">
-        <div class="exp-row-left">
-          <div class="exp-company">Void Enterprise</div>
-          <div class="exp-role">Software Engineer Intern</div>
-          <div class="exp-date">July 2024 — Feb 2025 · Remote, Greater Toronto Area</div>
-        </div>
-        <div class="exp-row-right">
-          <ul>
-            <li>Built responsive websites and front-end features using JavaScript and React.</li>
-            <li>Developed REST APIs to connect front-end pages with backend data.</li>
-            <li>Maintained PostgreSQL databases, writing queries and supporting data-related features.</li>
-            <li>Fixed bugs across client projects and wrote unit tests with Jest to catch issues before release.</li>
-          </ul>
-          <div class="exp-tags"><span>JavaScript</span><span>React</span><span>REST APIs</span><span>PostgreSQL</span><span>Jest</span></div>
-        </div>
-      </div>
-
-      <div class="exp-row">
-        <div class="exp-row-left">
-          <div class="exp-company">KashCandi Technology Solutions</div>
-          <div class="exp-role">Web Developer Intern</div>
-          <div class="exp-date">Feb 2022 — Jul 2023 · Vadodara, India</div>
-        </div>
-        <div class="exp-row-right">
-          <ul>
-            <li>Learning-focused internship completed alongside my engineering degree.</li>
-            <li>Built web pages and UI components using HTML, CSS, JavaScript, and React.</li>
-            <li>Worked with MySQL databases, tested features manually, and fixed bugs.</li>
-            <li>Used Git and GitHub for version control and team collaboration.</li>
-          </ul>
-          <div class="exp-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>MySQL</span></div>
-        </div>
-      </div>
-
-      <div class="exp-row">
-        <div class="exp-row-left">
-          <div class="exp-company">CODEMASTR APPS</div>
-          <div class="exp-role">Web Developer Intern</div>
-          <div class="exp-date">Dec 2021 — Feb 2022 · Vadodara, India</div>
-        </div>
-        <div class="exp-row-right">
-          <ul>
-            <li>Assisted senior developers in building web application features.</li>
-            <li>Worked on frontend and backend tasks, building a foundation in JavaScript and web development.</li>
-            <li>Supported debugging, testing, and documentation across the development lifecycle.</li>
-          </ul>
-          <div class="exp-tags"><span>JavaScript</span><span>Web Development</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="section-inner">
-    <div class="section-label">04 — Skills</div>
-    <h2 class="section-title">Tech <em>Stack</em></h2>
-
-    <div class="skills-grid">
-
-      <div class="skill-block">
-        <div class="skill-block-title">Backend</div>
-        <div class="skill-block-tags">
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" class="skill-logo"/>Node.js</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="" class="skill-logo"/>Express.js</span>
-          <span class="skill-tag"><span class="skill-logo-dot">●</span>REST APIs</span>
-          <span class="skill-tag"><span class="skill-logo-dot">●</span>JWT Auth</span>
-          <span class="skill-tag"><span class="skill-logo-dot">●</span>Swagger UI</span>
-          <span class="skill-tag"><span class="skill-logo-dot">●</span>Zod</span>
-          <span class="skill-tag"><span class="skill-logo-dot">●</span>Gemini API</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="" class="skill-logo"/>Spring Boot</span>
-        </div>
-      </div>
-
-      <div class="skill-block">
-        <div class="skill-block-title">Frontend</div>
-        <div class="skill-block-tags">
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" class="skill-logo"/>React</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="" class="skill-logo"/>Next.js</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" class="skill-logo"/>JavaScript</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" class="skill-logo"/>TypeScript</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" class="skill-logo"/>HTML5</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="" class="skill-logo"/>CSS3</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="" class="skill-logo"/>Sass</span>
-        </div>
-      </div>
-
-      <div class="skill-block">
-        <div class="skill-block-title">Databases</div>
-        <div class="skill-block-tags">
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="" class="skill-logo"/>PostgreSQL</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="" class="skill-logo"/>MongoDB</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="" class="skill-logo"/>MySQL</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="" class="skill-logo"/>SQLite</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="" class="skill-logo"/>SQL Server</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg" alt="" class="skill-logo"/>Firebase</span>
-        </div>
-      </div>
-
-      <div class="skill-block">
-        <div class="skill-block-title">Testing &amp; DevOps</div>
-        <div class="skill-block-tags">
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" alt="" class="skill-logo"/>Jest</span>
-          <span class="skill-tag"><span class="skill-logo-dot">●</span>Supertest</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" class="skill-logo"/>Docker</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" class="skill-logo"/>Git</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="" class="skill-logo"/>GitHub</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" alt="" class="skill-logo"/>Vercel</span>
-          <span class="skill-tag"><span class="skill-logo-dot">●</span>Render</span>
-          <span class="skill-tag"><span class="skill-logo-dot">●</span>Postman</span>
-        </div>
-      </div>
-
-      
-      <div class="skill-block">
-        <div class="skill-block-title">Desktop, Mobile &amp; .NET</div>
-        <div class="skill-block-tags">
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="" class="skill-logo"/>C#</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt="" class="skill-logo"/>.NET 8</span>
-          <span class="skill-tag"><span class="skill-logo-dot">●</span>WinForms</span>
-          <span class="skill-tag"><span class="skill-logo-dot">●</span>ADO.NET</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="" class="skill-logo"/>Swift (iOS)</span>
-          <span class="skill-tag"><span class="skill-logo-dot">●</span>UIKit</span>
-          <span class="skill-tag"><span class="skill-logo-dot">●</span>Core Data</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="" class="skill-logo"/>Java (Android)</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="" class="skill-logo"/>JavaFX</span>
-        </div>
-      </div>
-
-      <div class="skill-block">
-        <div class="skill-block-title">Languages &amp; Tools</div>
-        <div class="skill-block-tags">
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="" class="skill-logo"/>Java</span>
-          <span class="skill-tag"><span class="skill-logo-dot">●</span>SQL</span>
-          <span class="skill-tag"><span class="skill-logo-dot">●</span>Agile / Scrum</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="" class="skill-logo"/>GitHub Copilot</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="" class="skill-logo"/>VS Code</span>
-          <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" alt="" class="skill-logo"/>Visual Studio</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education">
-  <div class="section-inner">
-    <div class="section-label">05 — Education</div>
-    <h2 class="section-title">Academic <em>Background</em></h2>
-    <div class="edu-list">
-      <div class="edu-row">
-        <div class="edu-left">
-          <div class="edu-school">Humber Polytechnic</div>
-          <div class="edu-degree">Post Graduate Certificate — Information Technology Solutions</div>
-          <div class="edu-date">Jan 2024 – Sep 2025 · Toronto, ON 🇨🇦</div>
-        </div>
-        <div class="edu-right">
-          <div class="edu-gpa">GPA 3.50 / 4.0</div>
-          <div class="edu-honour">🏆 Dean's Honours List — All Semesters</div>
-        </div>
-      </div>
-      <div class="edu-row">
-        <div class="edu-left">
-          <div class="edu-school">SVIT — Gujarat Technological University</div>
-          <div class="edu-degree">Bachelor of Engineering — Computer Engineering</div>
-          <div class="edu-date">2019 – 2023 · Gujarat, India 🇮🇳</div>
-        </div>
-        <div class="edu-right">
-          <div class="edu-gpa">CGPA 8.0 / 10</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-inner contact-inner">
-    <div class="section-label" style="text-align:center">06 — Contact</div>
-    <h2 class="section-title contact-title">Let's Work<br/><em>Together</em></h2>
-    <p class="contact-sub">Actively seeking full-time Full Stack or Backend Developer roles across Canada. Remote, hybrid, or on-site — I'm open.</p>
-
-    <div class="contact-cards">
-      <a href="mailto:hetshah1324@gmail.com" class="contact-card">
-        <div class="contact-card-icon">✉</div>
-        <div class="contact-card-label">Email</div>
-        <div class="contact-card-val">hetshah1324@gmail.com</div>
-      </a>
-      <a href="tel:+14379553994" class="contact-card">
-        <div class="contact-card-icon">📞</div>
-        <div class="contact-card-label">Phone</div>
-        <div class="contact-card-val">+1 437-955-3994</div>
-      </a>
-      <a href="https://linkedin.com/in/hetshah2406" target="_blank" rel="noopener" class="contact-card">
-        <div class="contact-card-icon">in</div>
-        <div class="contact-card-label">LinkedIn</div>
-        <div class="contact-card-val">hetshah2406</div>
-      </a>
-      <a href="https://github.com/HetShah24-06" target="_blank" rel="noopener" class="contact-card">
-        <div class="contact-card-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-        </div>
-        <div class="contact-card-label">GitHub</div>
-        <div class="contact-card-val">HetShah24-06</div>
-      </a>
-    </div>
-
-    <a href="HetShah_Resume.pdf" download class="btn-primary" style="margin-top:2.5rem;display:inline-flex;align-items:center;gap:8px;">
-      ⬇ Download Resume
+  <!-- ───────── Sidebar ───────── -->
+  <aside class="side" aria-label="Site navigation">
+    <a class="brand" href="#hello">
+      <span class="brand-mark" aria-hidden="true">{h}</span>
+      <span>
+        <span class="brand-name">Het Shah</span>
+        <span class="brand-role">Full Stack Developer</span>
+      </span>
     </a>
-  </div>
-</section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <span class="footer-logo">Het Shah</span>
-    <span>© 2026 · Full Stack Developer · Greater Toronto Area, CA</span>
-    <span>Built with ♥ &amp; VS Code</span>
-  </div>
-</footer>
+    <p class="status"><span class="status-dot" aria-hidden="true"></span>Open to full-time roles in Canada</p>
 
-<button id="back-top" aria-label="Back to top">&#8679;</button>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+
+    <nav id="nav" class="nav">
+      <span class="nav-pill" aria-hidden="true"></span>
+      <p class="nav-group">Reference</p>
+      <a href="#hello"><span class="m get">GET</span>/developer</a>
+      <a href="#about"><span class="m get">GET</span>/about</a>
+      <a href="#experience"><span class="m get">GET</span>/experience</a>
+      <a href="#projects"><span class="m get">GET</span>/projects</a>
+      <a href="#skills"><span class="m get">GET</span>/skills</a>
+      <a href="#education"><span class="m get">GET</span>/education</a>
+      <a href="#contact"><span class="m post">POST</span>/contact</a>
+    </nav>
+
+    <div class="side-links">
+      <a href="https://github.com/HetShah24-06" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/hetshah2406" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="HetShah_Resume.pdf" download>Resume (PDF)</a>
+    </div>
+  </aside>
+
+  <!-- ───────── Main ───────── -->
+  <main id="main" class="main">
+    <div class="spot" aria-hidden="true"></div>
+
+    <!-- HELLO -->
+    <section id="hello" class="sec hello" data-endpoint="hello">
+      <h1 class="decode" data-text="Het Shah">Het Shah</h1>
+      <p class="lede">I build the APIs behind the interface. Backend-focused full stack developer in the Greater Toronto Area, working with Node.js, React, Next.js, PostgreSQL and MongoDB.</p>
+      <div class="actions">
+        <a class="btn btn-solid" href="#projects">See my projects</a>
+        <a class="btn btn-line" href="HetShah_Resume.pdf" download>Download resume</a>
+      </div>
+
+      <figure class="flow" aria-label="How a request moves through my stack: browser, API, database, and back">
+        <div class="flow-node" data-n="0"><span class="flow-k">Client</span><span class="flow-v">React · Next.js</span></div>
+        <div class="flow-wire"><span class="pkt pkt-req"></span><span class="pkt pkt-res"></span></div>
+        <div class="flow-node" data-n="1"><span class="flow-k">API</span><span class="flow-v">Node · Express</span></div>
+        <div class="flow-wire"><span class="pkt pkt-req"></span><span class="pkt pkt-res"></span></div>
+        <div class="flow-node" data-n="2"><span class="flow-k">Database</span><span class="flow-v">Postgres · Mongo</span></div>
+        <figcaption>A request through the stack I work in every day.</figcaption>
+      </figure>
+
+      <dl class="facts">
+        <div><dt>Now</dt><dd>Backend &amp; Web Developer (Consultant), Void Enterprise</dd></div>
+        <div><dt>Led</dt><dd>3-person capstone team, RewardsX for Credits Financial Inc.</dd></div>
+        <div><dt>Shipped</dt><dd>Interview Master, an AI interview-prep app, <a href="https://interview-master-ebon.vercel.app" target="_blank" rel="noopener">live on Vercel</a></dd></div>
+      </dl>
+
+      <template class="resp">
+<span class="c-cmd">$ curl</span> <span class="c-url">localhost:3000/api/developer</span>
+
+<span class="c-status">200 OK</span>  <span class="c-dim">application/json</span>
+{
+  <span class="c-key">"name"</span>: <span class="c-str">"Het Shah"</span>,
+  <span class="c-key">"role"</span>: <span class="c-str">"Full Stack Developer"</span>,
+  <span class="c-key">"focus"</span>: <span class="c-str">"backend"</span>,
+  <span class="c-key">"location"</span>: <span class="c-str">"Greater Toronto Area, CA"</span>,
+  <span class="c-key">"stack"</span>: [
+    <span class="c-str">"Node.js"</span>, <span class="c-str">"Express"</span>, <span class="c-str">"React"</span>,
+    <span class="c-str">"Next.js"</span>, <span class="c-str">"PostgreSQL"</span>, <span class="c-str">"MongoDB"</span>
+  ],
+  <span class="c-key">"openToWork"</span>: <span class="c-bool">true</span>
+}</template>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="sec" data-endpoint="about">
+      <header class="sec-head"><span class="m get">GET</span><code>/about</code><h2>About</h2></header>
+      <p>I like the part of an app nobody sees: the routes, the data model, the validation that stops bad input before it reaches the database. Most of my work is building REST APIs with Node.js and Express and designing schemas in PostgreSQL and MongoDB, then wiring them into React and Next.js front ends.</p>
+      <p>Since September 2025 I've worked remotely as a consultant at Void Enterprise, after an internship there. At Humber Polytechnic I led a three-person Agile team on a capstone for Credits Financial Inc. and finished my Postgraduate Certificate on the Dean's Honours List.</p>
+      <p>I've also built outside JavaScript: a JavaFX healthcare app, a C#/.NET cafe system, and mobile apps in Swift and Java.</p>
+
+      <template class="resp">
+<span class="c-cmd">$ curl</span> <span class="c-url">localhost:3000/api/about</span>
+
+<span class="c-status">200 OK</span>
+{
+  <span class="c-key">"enjoys"</span>: [
+    <span class="c-str">"API design"</span>,
+    <span class="c-str">"data modelling"</span>,
+    <span class="c-str">"input validation"</span>,
+    <span class="c-str">"auth &amp; security"</span>
+  ],
+  <span class="c-key">"workStyle"</span>: <span class="c-str">"remote-friendly, Agile"</span>,
+  <span class="c-key">"education"</span>: <span class="c-str">"Humber PG Cert, Dean's List"</span>,
+  <span class="c-key">"languages"</span>: [<span class="c-str">"JavaScript"</span>, <span class="c-str">"TypeScript"</span>,
+                <span class="c-str">"Java"</span>, <span class="c-str">"C#"</span>, <span class="c-str">"Swift"</span>]
+}</template>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="sec" data-endpoint="experience">
+      <header class="sec-head"><span class="m get">GET</span><code>/experience</code><h2>Experience</h2></header>
+
+      <ol class="timeline">
+        <li class="job">
+          <div class="job-when">Sep 2025 – now</div>
+          <div class="job-body">
+            <h3>Backend &amp; Web Developer (Consultant)</h3>
+            <p class="job-org">Void Enterprise, remote</p>
+            <ul>
+              <li>Build and maintain backend services and REST APIs with Node.js and JavaScript.</li>
+              <li>Develop web features and pages in React and Next.js.</li>
+              <li>Design MongoDB data models and write the queries behind them.</li>
+              <li>Work async with the team through Git-based workflows; debug, test and document changes.</li>
+            </ul>
+            <p class="job-tags"><code>Node.js</code><code>React</code><code>Next.js</code><code>MongoDB</code></p>
+          </div>
+        </li>
+        <li class="job">
+          <div class="job-when">May – Aug 2025</div>
+          <div class="job-body">
+            <h3>Full Stack Developer &amp; Team Lead</h3>
+            <p class="job-org">RewardsX capstone, Credits Financial Inc. and Humber Polytechnic</p>
+            <ul>
+              <li>Led a 3-person Agile team through sprint planning, task assignment and code reviews.</li>
+              <li>Designed the backend architecture and PostgreSQL schema; built features in Node.js and React.</li>
+              <li>Integrated Google Places, Yelp, Mapbox and OpenStreetMap; documented endpoints in Swagger UI.</li>
+            </ul>
+            <p class="job-tags"><code>Node.js</code><code>React</code><code>PostgreSQL</code><code>Swagger</code></p>
+          </div>
+        </li>
+        <li class="job">
+          <div class="job-when">Jul 2024 – Feb 2025</div>
+          <div class="job-body">
+            <h3>Software Engineer Intern</h3>
+            <p class="job-org">Void Enterprise, remote</p>
+            <ul>
+              <li>Built responsive websites and front-end features in JavaScript and React.</li>
+              <li>Developed REST APIs and maintained PostgreSQL databases.</li>
+              <li>Fixed bugs across client projects and wrote unit tests with Jest.</li>
+            </ul>
+            <p class="job-tags"><code>React</code><code>REST</code><code>PostgreSQL</code><code>Jest</code></p>
+          </div>
+        </li>
+        <li class="job">
+          <div class="job-when">Feb 2022 – Jul 2023</div>
+          <div class="job-body">
+            <h3>Web Developer Intern</h3>
+            <p class="job-org">KashCandi Technology Solutions, Vadodara</p>
+            <ul>
+              <li>Learning-focused internship alongside my engineering degree.</li>
+              <li>Built pages and UI components with HTML, CSS, JavaScript and React; worked with MySQL.</li>
+              <li>Tested features, fixed bugs, and used Git and GitHub with the team.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <div class="job-when">Dec 2021 – Feb 2022</div>
+          <div class="job-body">
+            <h3>Web Developer Intern</h3>
+            <p class="job-org">CODEMASTR APPS, Vadodara</p>
+            <ul>
+              <li>Assisted senior developers on web features across frontend and backend tasks.</li>
+              <li>Supported debugging, testing and documentation.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+
+      <template class="resp">
+<span class="c-cmd">$ curl</span> <span class="c-url">localhost:3000/api/experience</span>
+
+<span class="c-status">200 OK</span>
+{
+  <span class="c-key">"count"</span>: <span class="c-num">5</span>,
+  <span class="c-key">"current"</span>: {
+    <span class="c-key">"company"</span>: <span class="c-str">"Void Enterprise"</span>,
+    <span class="c-key">"title"</span>: <span class="c-str">"Backend &amp; Web Developer"</span>,
+    <span class="c-key">"type"</span>: <span class="c-str">"consultant, remote"</span>,
+    <span class="c-key">"since"</span>: <span class="c-str">"2025-09"</span>
+  },
+  <span class="c-key">"leadership"</span>: {
+    <span class="c-key">"project"</span>: <span class="c-str">"RewardsX"</span>,
+    <span class="c-key">"teamSize"</span>: <span class="c-num">3</span>,
+    <span class="c-key">"role"</span>: <span class="c-str">"team lead"</span>
+  }
+}</template>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="sec" data-endpoint="projects">
+      <header class="sec-head"><span class="m get">GET</span><code>/projects</code><h2>Projects</h2></header>
+
+      <article class="proj proj-lead">
+        <a class="proj-img" href="https://interview-master-ebon.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <img src="assets/projects/interview-master.jpg" alt="" width="1200" height="627" loading="lazy"/>
+        </a>
+        <h3>Interview Master</h3>
+        <p>An AI interview-prep app. Paste a job description and your resume and it returns a match score, technical and behavioural questions with model answers, a skill-gap breakdown, a prep plan, and a tailored resume PDF.</p>
+        <ul class="proj-notes">
+          <li>Gemini output is constrained by Zod schemas, so every report has the same shape</li>
+          <li>JWT in httpOnly cookies, CSRF tokens, per-IP rate limits, and logout that revokes the token server-side</li>
+          <li>Jest and Supertest on the API; Docker on Render, frontend on Vercel</li>
+        </ul>
+        <p class="job-tags"><code>Node.js</code><code>Express</code><code>MongoDB</code><code>React</code><code>Gemini API</code><code>Docker</code></p>
+        <p class="proj-links"><a href="https://interview-master-ebon.vercel.app" target="_blank" rel="noopener">Open live app</a><a href="https://github.com/HetShah24-06/ai-interview-prep" target="_blank" rel="noopener">View code</a></p>
+      </article>
+
+      <div class="proj-grid">
+        <article class="proj">
+          <a class="proj-img" href="https://yourowntheater.onrender.com/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/your-own-theater.jpg" alt="" width="1200" height="627" loading="lazy"/></a>
+          <h3>Your Own Theater</h3>
+          <p>Movie watchlists, favourites and ratings on the TMDB API. Capstone I led with a team of four.</p>
+          <p class="job-tags"><code>JavaScript</code><code>TMDB API</code></p>
+          <p class="proj-links"><a href="https://yourowntheater.onrender.com/" target="_blank" rel="noopener">Open live app</a><a href="https://github.com/HetShah24-06/YourOwnTheater" target="_blank" rel="noopener">View code</a></p>
+        </article>
+        <article class="proj">
+          <a class="proj-img" href="https://github.com/HetShah24-06/Healthcare_app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/healthcare.jpg" alt="" width="1200" height="627" loading="lazy"/></a>
+          <h3>Healthcare Appointment System</h3>
+          <p>JavaFX desktop app for patients and appointments, on embedded SQLite with background database threads.</p>
+          <p class="job-tags"><code>Java 21</code><code>JavaFX</code><code>SQLite</code></p>
+          <p class="proj-links"><a href="https://github.com/HetShah24-06/Healthcare_app" target="_blank" rel="noopener">View code</a></p>
+        </article>
+        <article class="proj">
+          <div class="proj-img"><img src="assets/projects/bookyourway.jpg" alt="" width="1200" height="627" loading="lazy"/></div>
+          <h3>BookYourWay</h3>
+          <p>Android flight booking: Firebase Auth with Google Sign-In, seat selection with live pricing, PDF e-tickets. Team of four.</p>
+          <p class="job-tags"><code>Java</code><code>Android</code><code>Firebase</code></p>
+          <p class="proj-links"><span>Code on request</span></p>
+        </article>
+        <article class="proj">
+          <a class="proj-img" href="https://github.com/HetShah24-06/IOS_PROJECT_HET" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/movieexplorer.jpg" alt="" width="1200" height="627" loading="lazy"/></a>
+          <h3>MovieExplorer</h3>
+          <p>iOS app to browse and search movies on the TMDb API, with Core Data caching for offline use.</p>
+          <p class="job-tags"><code>Swift</code><code>UIKit</code><code>Core Data</code></p>
+          <p class="proj-links"><a href="https://github.com/HetShah24-06/IOS_PROJECT_HET" target="_blank" rel="noopener">View code</a></p>
+        </article>
+        <article class="proj">
+          <a class="proj-img" href="https://github.com/HetShah24-06/cafe-management-dotnet" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/projects/cafe-management.jpg" alt="" width="1200" height="627" loading="lazy"/></a>
+          <h3>Cafe Management System</h3>
+          <p>WinForms app for menus, orders and billing, with admin and guest roles and parameterized ADO.NET queries.</p>
+          <p class="job-tags"><code>C#</code><code>.NET 8</code><code>SQL Server</code></p>
+          <p class="proj-links"><a href="https://github.com/HetShah24-06/cafe-management-dotnet" target="_blank" rel="noopener">View code</a></p>
+        </article>
+      </div>
+
+      <template class="resp">
+<span class="c-cmd">$ curl</span> <span class="c-url">localhost:3000/api/projects?featured=true</span>
+
+<span class="c-status">200 OK</span>
+{
+  <span class="c-key">"name"</span>: <span class="c-str">"Interview Master"</span>,
+  <span class="c-key">"status"</span>: <span class="c-str">"live"</span>,
+  <span class="c-key">"api"</span>: {
+    <span class="c-key">"runtime"</span>: <span class="c-str">"Node.js + Express 5"</span>,
+    <span class="c-key">"db"</span>: <span class="c-str">"MongoDB Atlas"</span>,
+    <span class="c-key">"llm"</span>: <span class="c-str">"Gemini, Zod-validated"</span>,
+    <span class="c-key">"auth"</span>: [<span class="c-str">"JWT httpOnly"</span>, <span class="c-str">"CSRF"</span>, <span class="c-str">"rate limit"</span>],
+    <span class="c-key">"tests"</span>: [<span class="c-str">"Jest"</span>, <span class="c-str">"Supertest"</span>]
+  },
+  <span class="c-key">"deploy"</span>: { <span class="c-key">"api"</span>: <span class="c-str">"Render"</span>, <span class="c-key">"web"</span>: <span class="c-str">"Vercel"</span> },
+  <span class="c-key">"more"</span>: <span class="c-num">5</span>
+}</template>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="sec" data-endpoint="skills">
+      <header class="sec-head"><span class="m get">GET</span><code>/skills</code><h2>Skills</h2></header>
+      <table class="skills">
+        <tbody>
+          <tr><th scope="row">Backend</th><td>Node.js, Express, REST APIs, JWT auth, Zod, Swagger, Spring Boot</td></tr>
+          <tr><th scope="row">Frontend</th><td>React, Next.js, JavaScript, TypeScript, HTML, CSS, Sass</td></tr>
+          <tr><th scope="row">Data</th><td>PostgreSQL, MongoDB, MySQL, SQLite, SQL Server, Firebase</td></tr>
+          <tr><th scope="row">Testing &amp; ops</th><td>Jest, Supertest, Docker, Git, GitHub, Vercel, Render, Postman</td></tr>
+          <tr><th scope="row">Other platforms</th><td>Java, JavaFX, Android, C#, .NET, WinForms, Swift, UIKit</td></tr>
+          <tr><th scope="row">Ways of working</th><td>Agile and Scrum, code review, API documentation, GitHub Copilot</td></tr>
+        </tbody>
+      </table>
+
+      <template class="resp">
+<span class="c-cmd">$ curl</span> <span class="c-url">localhost:3000/api/skills?level=daily</span>
+
+<span class="c-status">200 OK</span>
+{
+  <span class="c-key">"backend"</span>:  [<span class="c-str">"Node.js"</span>, <span class="c-str">"Express"</span>, <span class="c-str">"REST"</span>],
+  <span class="c-key">"frontend"</span>: [<span class="c-str">"React"</span>, <span class="c-str">"Next.js"</span>],
+  <span class="c-key">"data"</span>:     [<span class="c-str">"PostgreSQL"</span>, <span class="c-str">"MongoDB"</span>],
+  <span class="c-key">"testing"</span>:  [<span class="c-str">"Jest"</span>, <span class="c-str">"Supertest"</span>],
+  <span class="c-key">"tools"</span>:    [<span class="c-str">"Git"</span>, <span class="c-str">"Docker"</span>, <span class="c-str">"Postman"</span>]
+}</template>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="sec" data-endpoint="education">
+      <header class="sec-head"><span class="m get">GET</span><code>/education</code><h2>Education</h2></header>
+      <div class="edu">
+        <div>
+          <h3>Postgraduate Certificate, Information Technology Solutions</h3>
+          <p>Humber Polytechnic, Toronto. Jan 2024 – Sep 2025</p>
+        </div>
+        <p class="edu-grade">GPA 3.50 / 4.0, Dean's Honours List</p>
+      </div>
+      <div class="edu">
+        <div>
+          <h3>Bachelor of Engineering, Computer Engineering</h3>
+          <p>SVIT, Gujarat Technological University. 2019 – 2023</p>
+        </div>
+        <p class="edu-grade">CGPA 8.0 / 10</p>
+      </div>
+      <p class="cert">Also: AWS Certified Cloud Practitioner.</p>
+
+      <template class="resp">
+<span class="c-cmd">$ curl</span> <span class="c-url">localhost:3000/api/education</span>
+
+<span class="c-status">200 OK</span>
+[
+  {
+    <span class="c-key">"school"</span>: <span class="c-str">"Humber Polytechnic"</span>,
+    <span class="c-key">"program"</span>: <span class="c-str">"PG Cert, IT Solutions"</span>,
+    <span class="c-key">"gpa"</span>: <span class="c-num">3.5</span>,
+    <span class="c-key">"deansList"</span>: <span class="c-bool">true</span>
+  },
+  {
+    <span class="c-key">"school"</span>: <span class="c-str">"SVIT, GTU"</span>,
+    <span class="c-key">"program"</span>: <span class="c-str">"B.E. Computer Engineering"</span>,
+    <span class="c-key">"cgpa"</span>: <span class="c-num">8.0</span>
+  }
+]</template>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="sec contact" data-endpoint="contact">
+      <header class="sec-head"><span class="m post">POST</span><code>/contact</code><h2>Contact</h2></header>
+      <p>I'm looking for a full-time full stack or backend role in Canada: remote, hybrid or on-site. Email is the fastest way to reach me.</p>
+      <ul class="contact-list">
+        <li><span>Email</span><a href="mailto:hetshah1324@gmail.com">hetshah1324@gmail.com</a></li>
+        <li><span>Phone</span><a href="tel:+14379553994">+1 437-955-3994</a></li>
+        <li><span>LinkedIn</span><a href="https://linkedin.com/in/hetshah2406" target="_blank" rel="noopener">linkedin.com/in/hetshah2406</a></li>
+        <li><span>GitHub</span><a href="https://github.com/HetShah24-06" target="_blank" rel="noopener">github.com/HetShah24-06</a></li>
+      </ul>
+      <a class="btn btn-solid" href="mailto:hetshah1324@gmail.com">Email me</a>
+
+      <template class="resp">
+<span class="c-cmd">$ curl -X POST</span> <span class="c-url">localhost:3000/api/contact</span> \
+  <span class="c-dim">-H</span> <span class="c-str">"Content-Type: application/json"</span> \
+  <span class="c-dim">-d</span> <span class="c-str">'{ "role": "Full Stack Developer",</span>
+        <span class="c-str">"company": "you" }'</span>
+
+<span class="c-status">201 Created</span>
+{
+  <span class="c-key">"message"</span>: <span class="c-str">"Thanks for reaching out!"</span>,
+  <span class="c-key">"email"</span>: <span class="c-str">"hetshah1324@gmail.com"</span>,
+  <span class="c-key">"linkedin"</span>: <span class="c-str">"in/hetshah2406"</span>
+}</template>
+    </section>
+
+    <footer class="foot">
+      <p>Built by Het Shah with HTML, CSS and vanilla JavaScript. Hosted on Vercel.</p>
+    </footer>
+  </main>
+
+  <!-- ───────── Live response panel (desktop) ───────── -->
+  <aside class="console" aria-label="API response preview" aria-live="off">
+    <div class="console-bar">
+      <span class="console-title"><span class="console-state" id="console-state">Idle</span></span>
+      <button class="console-send" id="console-send" type="button">Send again</button>
+    </div>
+    <pre class="console-body" id="console-body"></pre>
+  </aside>
+
+</div>
 
 <script src="js/main.js"></script>
 </body>
