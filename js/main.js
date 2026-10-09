@@ -133,12 +133,14 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
     const target = document.querySelector(a.getAttribute("href"));
     if (!target) return;
     e.preventDefault();
-    const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--nav-h")) || 68;
+    const navH =
+      parseInt(
+        getComputedStyle(document.documentElement).getPropertyValue("--nav-h"),
+      ) || 68;
     const top = target.getBoundingClientRect().top + window.scrollY - navH;
     window.scrollTo({ top, behavior: "smooth" });
   });
 });
-
 
 /* ── HERO TERMINAL ANIMATION ── */
 (function initTerminal() {
@@ -160,7 +162,7 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
       parts: [
         { cls: "ht-key", t: "role" },
         { cls: "ht-dim", t: "       → " },
-        { cls: "ht-str", t: '"Full Stack Engineer"' },
+        { cls: "ht-str", t: '"Full Stack Developer"' },
       ],
     },
     {
@@ -168,7 +170,7 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
       parts: [
         { cls: "ht-key", t: "location" },
         { cls: "ht-dim", t: "   → " },
-        { cls: "ht-str", t: '"Brampton, ON 🇨🇦"' },
+        { cls: "ht-str", t: '"Greater Toronto Area 🇨🇦"' },
       ],
     },
     { type: "blank" },
@@ -180,7 +182,7 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
         { cls: "ht-dim", t: "  " },
         { cls: "ht-key", t: "backend" },
         { cls: "ht-dim", t: ":  " },
-        { cls: "ht-amber", t: '["Node.js", "PostgreSQL"]' },
+        { cls: "ht-amber", t: '["Node.js", "Express"]' },
       ],
     },
     {
@@ -196,9 +198,9 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
       type: "output",
       parts: [
         { cls: "ht-dim", t: "  " },
-        { cls: "ht-key", t: "arch" },
+        { cls: "ht-key", t: "data" },
         { cls: "ht-dim", t: ":     " },
-        { cls: "ht-amber", t: '"Microservices"' },
+        { cls: "ht-amber", t: '["PostgreSQL", "MongoDB"]' },
       ],
     },
     { type: "output", parts: [{ cls: "ht-dim", t: "}" }] },
@@ -222,7 +224,7 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
       type: "output",
       parts: [
         { cls: "ht-green", t: "✓ " },
-        { cls: "ht-val", t: "3+ Years Experience" },
+        { cls: "ht-val", t: "Interview Master — live on Vercel" },
       ],
     },
     { type: "blank" },
